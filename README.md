@@ -3,19 +3,19 @@
 ### Lyrics page
 
 <p>
-<img width="700"src="https://chiedev.github.io/laravel-lyrics-manager-web-app/public/views/content/lyrics_and_chords/img/screenshot-echie.com-2017-04-24-18-38-56.png" title="Lyrics Manager" alt="Lyrics Manager">
+<img width="700"src="https://chiedev.github.io/laravel-lyrics-manager-web-app/public/img/screenshots/screenshot-echie.com-2017-04-24-18-38-56.png" title="Lyrics Manager" alt="Lyrics Manager">
 </p>
 
 ### Adding new lyrics
 
 <p>
-<img width="700"src="https://chiedev.github.io/laravel-lyrics-manager-web-app/public/views/content/lyrics_and_chords/img/screenshot-echie.com-2017-04-24-18-37-57.png" title="Lyrics Manager" alt="Lyrics Manager">
+<img width="700"src="https://chiedev.github.io/laravel-lyrics-manager-web-app/public/img/screenshots/screenshot-echie.com-2017-04-24-18-37-57.png" title="Lyrics Manager" alt="Lyrics Manager">
 </p>
 
 ### Editing lyrics
 
 <p>
-<img width="700"src="https://chiedev.github.io/laravel-lyrics-manager-web-app/public/views/content/lyrics_and_chords/img/screenshot-echie.com-2017-04-24-19-50-30.png" title="Lyrics Manager" alt="Lyrics Manager">
+<img width="700"src="https://chiedev.github.io/laravel-lyrics-manager-web-app/public/img/screenshots/screenshot-echie.com-2017-04-24-19-50-30.png" title="Lyrics Manager" alt="Lyrics Manager">
 </p>
 
 ## Laravel PHP Framework
