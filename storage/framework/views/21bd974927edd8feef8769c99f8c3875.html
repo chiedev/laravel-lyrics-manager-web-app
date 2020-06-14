@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $__env->yieldContent('title'); ?></title>
+	<?php echo $__env->make('resources._head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->yieldContent('head'); ?>
+</head>
+<body>
+
+	<?php echo $__env->yieldContent('header'); ?>
+	<?php echo $__env->yieldContent('body'); ?>
+	<?php echo $__env->make('layouts._footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+</body>
+</html>

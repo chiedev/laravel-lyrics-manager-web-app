@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $__env->yieldContent('title'); ?></title>
+	<?php echo HTML::style('css/user-profile.css'); ?>
+
+	<?php echo HTML::style('css/modals.css'); ?>
+
+	<?php echo HTML::style('css/mobile.css'); ?>
+
+	<?php echo HTML::style('css/tooltips.css'); ?>
+
+	<?php echo HTML::style('http://fonts.googleapis.com/css?family=Oswald'); ?>
+
+	<?php echo HTML::style('http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz'); ?>
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo e(URL::asset('js/jquery.min.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(URL::asset('js/default.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(URL::asset('js/autosize.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(URL::asset('js/tooltips.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(URL::asset('js/plugins/readmore.js')); ?>"></script>
+	
+	<!--<script type="text/javascript" src="<?php echo e(URL::asset('js/photos.js')); ?>"></script>-->
+	<?php echo $__env->make('layouts.ajax._ajax', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</head>
+<body>
+<div id="background">
+	<div id="gradient"></div>
+</div>
+<div id="header">
+	<div id="header-bg-white"></div>
+	<div id="header-bg"></div>
+	<div id="header-content">
+		<div id="inner-content">
+			<div id="left">
+				<div id="nav">
+					<div class="tooltip-subject">
+						<a href="/" class="tooltip" label="home"><img src="<?php echo e(URL::asset('img/knot_small.png')); ?>"></a>
+					</div>
+				</div>
+			</div>
+			<div id="middle">
+			</div>
+			<div id="right">
+				<?php if(Auth::user()): ?>
+					<form method="post" action="<?php echo e(route( 'user_profile', [Auth::user()->username])); ?>">
+						<input id="user_link" type="submit" value="<?php echo ucfirst(Auth::user()->username); ?>">
+						<?php if(Auth::user()->firstname || Auth::user()->lastname): ?>
+							<input name="userid" type="hidden" value="<?php echo e(Auth::user()->firstname); ?> <?php echo e(Auth::user()->lastname); ?>">
+						<?php else: ?>
+							<input name="userid" type="hidden" value="<?php echo e(Auth::user()->id); ?>">	
+						<?php endif; ?>
+						<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+					</form>
+				<img id="user" class="user_link" src="<?php echo e(URL::asset('img/user.png')); ?>">
+				<img id="menu" src="<?php echo e(URL::asset('img/menu.png')); ?>">
+				<?php else: ?>
+					<button class="login_link">Login</button>
+					<div id="user-login">
+						<div id="tooltip" class="hide">
+							<div id="tip"></div>
+							<div id="content">
+								<?php echo FORM::open(['url' => 'auth/login']); ?>
+
+								<?php echo FORM::text('user', null, ['placeholder' => 'Email | Username', 'autofocus']); ?>
+
+								<?php echo FORM::password('password', ['placeholder' => 'Password']); ?>
+
+								<?php echo FORM::submit('Login', ['id'=>'button']); ?>
+
+								<?php echo HTML::link('register', 'Register'); ?><br>
+								<?php echo HTML::link('retrieve', 'Forgot Password?'); ?>
+
+								<?php echo FORM::close(); ?>
+
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
+			</div>
+			<?php if(Auth::user()): ?>
+			<div id="user">
+				<div id="tooltip" class="hide">
+					<div id="tip"></div>
+					<div id="content">
+						<span>User</span>
+						<a href="/profile">
+							<div id="link">Profile</div>
+						</a>
+						<a href="/settings">
+							<div id="link">Settings</div>
+						</a>
+						<a href="/logout">
+							<div id="link">Logout</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
+<div id="body">
+	<?php echo $__env->yieldContent('modal'); ?>
+	<div id="content">
+		<div id="bg_content"></div>
+		<div id="inner-content">
+			<?php echo $__env->yieldContent('content'); ?>
+		</div>
+	</div>
+
+	<?php echo $__env->yieldContent('other-sources'); ?>
+	
+	<?php if($remember=='not-visible'): ?>
+		<div id="right_content" class="not-visible">
+		<div id="bg"></div>
+			
+		</div>
+	<?php elseif($remember=='visible'): ?>
+		<div id="right_content" class="visible">
+		<div id="bg"></div>
+			
+		</div>
+	<?php endif; ?>
+</div>
+<?php echo $__env->make('layouts._footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+</html>

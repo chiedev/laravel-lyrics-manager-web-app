@@ -1,0 +1,115 @@
+#lyrics_show container.chord-tooltip{
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: #222;
+	line-height: 12px;
+	text-align: center;
+	margin: 20px 0 0 -20px;
+}
+#lyrics_show .chord-container{
+	width: calc(100px - 50px);
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+#lyrics_show .chord-container .chord-name,
+#lyrics_show .chord-container .open-string{
+	font-size: 12px;
+	padding: 7px 0 0 0;
+	line-height: 12px;
+}
+#lyrics_show .chord-container .chord-name{
+	font-size: 0;
+	line-height: 0;
+	padding: 0;	
+}
+#lyrics_show .chord-container .chord .fret{
+	height: 10px;
+}
+#lyrics_show .chord-container .chord .fret:first-child{
+	height: 12.5px;
+}
+#lyrics_show .chord-container .chord .fret td .point,
+#lyrics_show .chord-container .chord .fret td .last_point{
+	padding: 2.5px;
+	margin: -5% 0 0 -7.9%;
+}
+/*GUITAR----------------------------------------------------------------*/
+	#lyrics_show .chord-container.guitar .chord .fret td .last_point{
+		margin: -5% 0 0 13%;
+	}
+	#lyrics_show .chord-container.guitar .open-string{
+		width: 118%;
+	}
+/*UKULELE---------------------------------------------------------------*/
+	#lyrics_show .chord-container.ukulele .chord .fret td .last_point{
+		margin: -5% 0 0 26%;
+	}
+	#lyrics_show .chord-container.ukulele .open-string{
+		width: 131%;
+	}
+
+
+
+
+
+
+#chord-list{
+	/*text-align: left;*/
+}
+#chord-list container.chord-tooltip{
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: #222;
+	line-height: 12px;
+	text-align: center;
+	margin: 20px 0 0 -20px;
+}
+#chord-list .chord-container{
+	background: none;
+	width: calc(100px - 50px);
+	text-align: left;
+	padding: 2px;
+	-webkit-filter: invert(100%);
+	-moz-filter: invert(100%);
+	filter: invert(100%);
+}
+#chord-list .chord-container .chord-name,
+#chord-list .chord-container .open-string{
+	font-size: 12px;
+	padding: 7px 0 0 0;
+	line-height: 12px;
+	text-transform: capitalize;
+}
+#chord-list .chord-container .chord-name{
+	font-size: 12px;
+	line-height: 12px;
+	padding: 0;	
+}
+#chord-list .chord-container .chord .fret{
+	height: 10px;
+}
+#chord-list .chord-container .chord .fret:first-child{
+	height: 12.5px;
+}
+#chord-list .chord-container .chord .fret td .point,
+#chord-list .chord-container .chord .fret td .last_point{
+	padding: 2.5px;
+	margin: -5% 0 0 -7.9%;
+}
+/*GUITAR----------------------------------------------------------------*/
+	#chord-list .chord-container.guitar .chord .fret td .last_point{
+		margin: -5% 0 0 13%;
+	}
+	#chord-list .chord-container.guitar .open-string{
+		width: 118%;
+	}
+/*UKULELE---------------------------------------------------------------*/
+	#chord-list .chord-container.ukulele .chord .fret td .last_point{
+		margin: -5% 0 0 26%;
+	}
+	#chord-list .chord-container.ukulele .open-string{
+		width: 131%;
+	}

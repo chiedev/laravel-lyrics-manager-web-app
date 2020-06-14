@@ -1,0 +1,42 @@
+.button{
+	padding: 5px 20px;
+	background-color: #333;
+	color: #EAEAEA;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 18px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	text-transform: uppercase;
+	text-align: center;
+}
+.button.icon{
+	padding: 3px 5px;
+	background-color: #333;
+	color: #EAEAEA;
+	font-family: Arial;
+	font-size: 14px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	text-transform: uppercase;
+	text-align: center;
+	width: 20px;
+}
+.button:hover{
+	background-color: #555;
+}
+.button:disabled{
+	background-color: #CCC;
+	color: #EEE;
+	cursor: default;
+}
+
+/*THEMES*/
+/*green*/
+.button.green{
+	background-color: #1D9B1D;
+}
+.button.green:hover{
+	background-color: #26B526;
+}

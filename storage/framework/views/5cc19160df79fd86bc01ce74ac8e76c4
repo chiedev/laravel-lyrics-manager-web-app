@@ -1,0 +1,31 @@
+<?php $__env->startSection('content'); ?>
+	<div id="login_form">
+		<div id="inner-content">
+			<h1>stitch</h1>
+			<img src="<?php echo e(URL::asset('img/logo2.png')); ?>">
+			<hr>
+			<?php echo FORM::open(['url' => 'auth/login']); ?>
+
+			<?php echo FORM::text('user', null, ['placeholder' => 'Email | Username', 'autofocus']); ?>
+
+			<?php echo FORM::password('password', ['placeholder' => 'Password']); ?>
+
+			<?php echo FORM::submit('Login', ['id'=>'button']); ?>
+
+			<?php echo HTML::link('register', 'Register'); ?><br>
+			<?php echo HTML::link('retrieve', 'Forgot Password?'); ?>
+
+			<?php echo FORM::close(); ?>
+
+		</div>
+		<div id="errors">
+			<?php if(count($errors) > 0): ?>
+				<strong>Oops!</strong><br>
+				<?php foreach($errors->all() as $error): ?>
+					<li><img src="<?php echo e(URL::asset('img/cross.png')); ?>"><?php echo e($error); ?></li>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('home.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

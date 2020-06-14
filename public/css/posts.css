@@ -1,0 +1,282 @@
+#posts{
+	position: initial;
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+}
+.post{
+	position: relative;
+	width: calc(100% - 4%);
+	padding: 2% 2%;
+}
+.post .inner-content{
+	display: table;
+	width: 96%;
+	background-color: #FFF;
+	border-radius: 3px;
+	padding: 2%;
+	border: none;
+	color: #000;
+	box-shadow: 1px 1px 10px -5px #333;
+}
+.post .inner-content #username{
+	vertical-align: top;
+	width: 100%;
+	border-radius: 3px;
+	-webkit-transition: .09s;
+	-moz-transition: .09s;
+	-o-transition: .09s;
+	transition: .09s;
+}
+.post .inner-content #username a{
+	display: table-cell;
+	color: #7D98B9;
+	font-size: 12px;
+	vertical-align: middle;
+	-webkit-transition: .09s;
+	-moz-transition: .09s;
+	-o-transition: .09s;
+	transition: .09s;
+}
+.post .inner-content #username #avatar{
+	display: inline-block;
+	height: auto;
+	vertical-align: middle;
+	width: 40px;
+	margin-right: 10%;
+	border: solid thin transparent;
+}
+.post .inner-content #username #border{
+	position: absolute;
+	border: double thin #CCC;
+	padding: 20px;
+	width: 0px;
+	border-radius: 3px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+.post .inner-content #username:hover{
+	background-color: #F2F2F2;
+}
+.post .inner-content #username:hover i{
+	color: #777;
+}
+.post .inner-content #username:hover #border{
+	border: double thin #999;
+	transform: rotate(135deg);
+}
+.post .inner-content #username #user{
+	font-size: 15px;
+	text-transform: capitalize;
+	font-weight: bold;
+	text-indent: 10px;
+	vertical-align: middle;
+}
+.post .inner-content #username i{
+	position: absolute;
+	display: inline-block;
+	right: 20px;
+	top: 20px;
+	font-size: 14px;
+	color: #DDD;
+	-webkit-transition: .09s;
+	-moz-transition: .09s;
+	-o-transition: .09s;
+	transition: .09s;
+}
+.post .inner-content #username i:hover{
+	color: #777;
+	cursor: pointer;
+}
+.post .inner-content #post-content{
+	display: block;
+	vertical-align: top;
+	width: 100%;
+}
+.post .inner-content #post-content pre{
+	width: 400px;
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 0 15px;
+	color: #333;
+	word-wrap:break-word;
+	/*white-space: pre-wrap;*/
+}
+.post .inner-content #post-content a{
+	cursor: pointer;
+	color: #7D98B9;
+	font-size: 12px;
+}
+.post .inner-content #post-content a#readmore{
+	text-indent: 15px;
+	width: 80px;
+}
+.post .inner-content #post-content a #title{
+	color: #577293;
+	font-size: 14px;
+	font-weight: bold;
+}
+.post .inner-content #post-content i{
+	font-size: small;
+	display: block;
+	line-height: 18px;
+}
+.post .inner-content #user-tools{
+	display: block;
+	margin: 10px 0;
+	width: 100%;
+	border-bottom: solid thin #DDD;
+}
+.post .inner-content #user-tools div{
+	display: inline-block;
+}
+.post .inner-content #user-tools div i{
+	display: inline-block;
+	padding: 5px 7px;
+	margin: 5px 0;
+	font-size: 14px;
+	color: #555;
+	vertical-align: middle;
+	border-radius: 5px;
+	border: solid thin #CCC;
+}
+.post .inner-content #user-tools div i:hover{
+	color: #F2F2F2;
+	cursor: pointer;
+	background-color: #333;
+	border: solid thin transparent;
+}
+.post .inner-content #user-tools div i span{
+	font-family: Arial;
+	font-size: 13px;
+	vertical-align: top;
+	margin-left: 2px;
+}
+.post .inner-content #user-tools #info{
+	vertical-align: bottom;
+	padding-bottom: 5px;
+}
+.post .inner-content #user-tools #info li{
+	display: inline-block;
+	font-size: 12px;
+	color: #999;
+	padding: 0 2px;
+}
+.post .inner-content #user-tools #info li:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.post .inner-content #comments{
+	background-color: #FFF;
+	display: block;
+	width: 100%;
+}
+.post .inner-content #comments div{
+	display: block;
+	font-family: Arial;
+	font-size: 14px;
+    color: #444;
+	-webkit-transition: .09s;
+	-moz-transition: .09s;
+	-o-transition: .09s;
+	transition: .09s;
+	box-shadow: 0 0 1px 1px #CCC;
+	border: none;
+	border-radius: 0;
+	box-shadow: 0 0 0 0;
+	padding: 2px;
+}
+.post .inner-content #comments div #info{
+	display: inline-block;
+	width: 9%;
+	margin: 0 .5%;
+	vertical-align: top;
+	font-size: 12px;
+	color: #999;
+	text-align: center;
+}
+.post .inner-content #comments div #info a{
+
+}
+.post .inner-content #comments div #info a #avatar{
+	height: auto;
+	vertical-align: middle;
+	width: 35px;
+	border: solid thin transparent;
+	border-radius: 100px;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+.post .inner-content #comments div #info a #avatar:hover{
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	border-radius: 0;
+}
+.post .inner-content #comments div #comment{
+	display: inline-block;
+	width: 83%;
+	padding-left: 2%;
+	text-align: justify;
+	font-size: 12px;
+	line-height: 13px;
+	color: #555;
+	border-left: solid thin #CCC;
+}
+.post .inner-content hr{
+	display: block;
+	margin: 5px 0;
+}
+.post #write{
+	display: block;
+	width: 100%;
+	background-color: #FFF;
+	border-radius: 3px;
+	padding: 10px 10px 20px 10px;
+	border: none;
+	color: #000;
+	box-shadow: 1px 1px 10px -5px #333;
+}
+.post #write a{
+	display: inline-block;
+	width: 10%;
+	vertical-align: top;
+	font-size: 11px;
+	font-weight: bold;
+	color: #577293;
+	text-align: center;
+}
+.post #write a #avatar{
+	height: auto;
+	vertical-align: middle;
+	width: 35px;
+	border: solid thin transparent;
+	border-radius: 100px;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+.post #write textarea{
+	display: inline-block;
+	width: 85%;
+	font-family: Arial;
+	font-size: 12px;
+	border: none;
+	border-top: solid transparent;
+	resize:none;
+    padding: 1.25%;
+    color: #444;
+    border-radius: 4px;
+	-webkit-transition: .09s;
+	-moz-transition: .09s;
+	-o-transition: .09s;
+	transition: .09s;
+	box-shadow: 0 0 1px 1px #CCC;
+}

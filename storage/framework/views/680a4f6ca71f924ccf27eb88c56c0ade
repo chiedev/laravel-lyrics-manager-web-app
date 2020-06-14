@@ -1,0 +1,104 @@
+<?php $__env->startSection('head'); ?>
+	<?php echo HTML::style('css/default.css'); ?>
+
+	<?php echo $__env->make('layouts.ajax._ajax', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('header'); ?>
+<div id="background">
+	<div id="gradient"></div>
+</div>
+<div id="header">
+	<div id="header-bg-white"></div>
+	<div id="header-bg"></div>
+	<div id="header-content">
+		<div id="inner-content">
+			<div id="left">
+				<form>
+					<!-- <img src="<?php echo e(URL::asset('img/search.png')); ?>"> -->
+					<input tabindex="1" onblur="myFunction()" type="text" placeholder="Search.." id="search_ajax" onfocus="showHint(this.value)" onkeyup="showHint(this.value)" value="<?php echo e($song->title); ?>">
+					<span id="txtHint"></span>
+				</form>
+			</div>
+			<div id="middle">
+				<div id="nav">
+					<div class="tooltip-subject">
+						<a href="/" class="tooltip" label="home"><img src="<?php echo e(URL::asset('img/knot_small.png')); ?>"></a>
+					</div>
+				</div>
+			</div>
+			<div id="right">
+				<?php if(Auth::user()): ?>
+						<?php if(Auth::user()->firstname || Auth::user()->lastname): ?>
+							<a id="user_link"><?php echo ucfirst(Auth::user()->firstname.' '.Auth::user()->lastname); ?></a>
+						<?php else: ?>
+							<a id="user_link"><?php echo ucfirst(Auth::user()->username); ?></a>
+						<?php endif; ?>
+				<img id="user" class="user_link" src="<?php echo e(URL::asset('img/user.png')); ?>">
+				<img id="menu" src="<?php echo e(URL::asset('img/menu.png')); ?>">
+				<?php else: ?>
+					<button class="login_link">Login</button>
+					<div id="user-login">
+						<div id="tooltip" class="hide">
+							<div id="tip"></div>
+							<div id="content">
+								<?php echo FORM::open(['url' => 'auth/login']); ?>
+
+								<?php echo FORM::text('user', null, ['placeholder' => 'Email | Username', 'autofocus']); ?>
+
+								<?php echo FORM::password('password', ['placeholder' => 'Password']); ?>
+
+								<?php echo FORM::submit('Login', ['id'=>'button']); ?>
+
+								<?php echo HTML::link('register', 'Register'); ?><br>
+								<?php echo HTML::link('retrieve', 'Forgot Password?'); ?>
+
+								<?php echo FORM::close(); ?>
+
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
+			</div>
+			<?php if(Auth::user()): ?>
+			<div id="user">
+				<div id="tooltip" class="hide">
+					<div id="tip"></div>
+					<div id="content">
+						<span>User</span>
+						<a href="<?php echo e(route( 'logout')); ?>">
+							<div id="link">Logout</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body'); ?>
+
+	<div id="body">
+		
+		<?php echo $__env->yieldContent('modal'); ?>
+		<div id="left_content">
+			<div id="bg"></div>
+			<div id="inner-content" class="mousescroll">
+				<?php echo $__env->make('layouts._leftpanel', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			</div>
+		</div>
+		<div id="content">
+			<div id="bg_content"></div>
+			<?php echo $__env->yieldContent('content'); ?>
+		</div>
+
+		<?php echo $__env->yieldContent('other-sources'); ?>
+		
+		<div id="right_content">
+			<?php echo $__env->make('layouts._rightpanel', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('masterlayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

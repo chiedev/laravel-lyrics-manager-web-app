@@ -1,0 +1,16 @@
+<div id="inner_content" class="mousescroll">
+    <div id="space">
+        List of Songs
+    </div>
+    <?php echo $__env->yieldContent('add_song_link'); ?>
+    <?php foreach($songs as $mysong): ?>
+        <a href="/songs/link/<?php echo e($mysong->slug); ?>"><div id="links"><?php echo e($mysong->title); ?></div></a>
+        <a href="/songs/link/<?php echo e($mysong->slug); ?>"><div id="links"><?php echo e($mysong->title); ?></div></a>
+        <a href="/songs/link/<?php echo e($mysong->slug); ?>"><div id="links"><?php echo e($mysong->title); ?></div></a>
+        <a href="/songs/link/<?php echo e($mysong->slug); ?>"><div id="links"><?php echo e($mysong->title); ?></div></a>
+        <a href="/songs/link/<?php echo e($mysong->slug); ?>"><div id="links"><?php echo e($mysong->title); ?></div></a>
+    <?php endforeach; ?>
+    <div id="space">
+        End of Result
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<?php foreach($songs as $listsong): ?>
+	<div id="post">
+		<div id="inner-content">
+			<div id="username">
+				<div id="border"></div>
+				<a href=""><img id="avatar" src="<?php echo e(URL::asset('img/logo.png')); ?>"></a>
+				<a id="user" href=""><?php echo e($listsong->username); ?></a>
+				<i class="fa fa-chevron-down"></i>
+				<hr>
+			</div>
+			<div id="post-content">
+				<a href="<?php echo e(route('songs_path', [$listsong->slug])); ?>"><span id="title"><?php echo e($listsong->title); ?></span></a>
+				<?php if($listsong->artist != ""): ?>
+					<i>by <?php echo e($listsong->artist); ?></i>
+				<?php endif; ?>
+				<pre class="post_content"><?php echo htmlspecialchars($listsong->lyrics) ?></pre>
+			</div>
+			<?php if(Auth::user()): ?>
+				<div id="user-tools">
+					<!-- <i class="fa fa-thumbs-up"><div>Like</div></i> -->
+					<div id="beat_ajax"><i class="fa fa-heartbeat"><span>+1</span></i></div>
+					<div id="save_ajax"><i class="fa fa-star"><span>save</span></i></div>
+					<div id="info">
+						<?php $beats = 0; $saves = 0;?>
+						<?php foreach($extensions as $data): ?>
+							<?php $beats = $beats + ($data->beat);  $saves = $saves + ($data->save); ?>
+							<li><?php echo e($beats); ?> <?php if($beats>1): ?> beats <?php else: ?> beat <?php endif; ?> </li>
+							<li><?php echo e($saves); ?> <?php if($saves>1): ?> saves <?php else: ?> save <?php endif; ?> </li>
+						<?php endforeach; ?>
+					</div>
+				</div>
+				<div id="comments">
+					<?php foreach($extensions as $data): ?>
+						<div>
+							<div id="info">
+								<a href=""><img id="avatar" src="<?php echo e(URL::asset('img/logo.png')); ?>"></a>
+								1hr
+							</div>
+							<div id="comment"><?php echo e($data->comment); ?>
+
+
+1
+down vote
+favorite
+1
+I am trying to make an array from elements with a certain class in my web page. The array should get the videofile attribute value from all a tags with the class videoLink.
+
+The final values in the array should be. </br> </br> Like Reply </br> </br> 
+							</div>
+						</div>
+					<?php endforeach; ?>
+				</div>
+				<div id="comments">
+					<?php foreach($extensions as $data): ?>
+						<div>
+							<div id="info">
+								<a href=""><img id="avatar" src="<?php echo e(URL::asset('img/logo.png')); ?>"></a>
+								1hr
+							</div>
+							<div id="comment"><?php echo e($data->comment); ?> <span></br> </br> Like Reply</div> </br> </br> </span>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
+			<!-- <div id="real-content">
+				<div id="user-tools">
+					<i class="fa fa-thumbs-up"><div>Like</div></i>
+					<i class="fa fa-heartbeat"><div>+1</div></i>
+					<i class="fa fa-star"><div>Favorite</div></i>
+					<textarea placeholder="Write your comment here..."></textarea>
+				</div>
+			</div> -->
+		</div>
+		<?php if(Auth::user()): ?>
+			<div id="write">
+				<a href=""><img id="avatar" src="<?php echo e(URL::asset('img/logo.png')); ?>"><?php echo ucfirst(Auth::user()->username); ?></a>
+				<textarea placeholder="Write your comment here..."></textarea>
+			</div>
+		<?php endif; ?>
+	</div>
+<?php endforeach; ?>

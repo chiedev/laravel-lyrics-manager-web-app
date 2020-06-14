@@ -1,0 +1,28 @@
+
+<?php if($type == 'modal'): ?>
+<form method="POST" action="../add-new-song" id="add-song">
+	<div id="text">
+		<input type="text" id="title" name="form_title" placeholder="Song Title" required>
+		<input type="text" id="artist" name="form_artist" placeholder="Artist">
+	</div>
+	<textarea name="form_lyrics" id="form_lyrics" placeholder="Lyrics"></textarea>
+	<input type="submit" id="button" value="ADD">
+	<div id="info">
+		<span>Change Color to Blue : <i>7D98B9 ;</i></span>
+		<span>Autoplay : <i>auto_play=true ;</i></span>
+		<span>Hide related : <i>hide_related=true ;</i></span>
+	</div>
+	<textarea spellcheck="false" name="form_mp3" id="form_mp3" placeholder="Embedded Player"></textarea>
+	<input type="hidden" name="type" value="<?php echo e($typemodal); ?>" />
+	<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+</form>
+<?php elseif($type == 'new-post'): ?>
+<form method="POST" action="../add-new-song" id="add-song">
+	<div id="text"><i class="fa fa-music"></i><input type="text" id="title" name="form_title" placeholder="Song Title" required></div>
+	<div id="text"><i class="fa fa-microphone"></i><input type="text" id="artist" name="form_artist" placeholder="Artist"></div>
+	<textarea name="form_lyrics" id="form_lyrics" placeholder="Lyrics"></textarea>
+	<input type="submit" id="button" value="POST">
+	<input type="hidden" name="type" value="<?php echo e($typemodal); ?>" />
+	<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+</form>
+<?php endif; ?>

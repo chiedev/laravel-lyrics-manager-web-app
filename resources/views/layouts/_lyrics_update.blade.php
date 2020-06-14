@@ -1,0 +1,59 @@
+<div id="lyrics_module">
+	<form method="POST" action="update-song">
+		@if ($error == 'edit-error')
+			<label id="error">{{ $msg }}</label>
+		@endif
+		<div id="lyrics_title">
+			<div id="input">
+				<input onkeypress="save_enabled();" type="text" name="edit_title" id="edit_title" value="{{$song->title}}" placeholder="Title" onkeyup="check_update('#edit_title',this.value); save_enabled();" onblur="check_update('#edit_title',this.value); save_enabled();">
+				<input onkeypress="save_enabled();" type="text" name="edit_artist" value="{{$song->artist}}" placeholder="Artist">
+				<input type="text" name="set_chords" value="{{$song->chords}}" placeholder="chords used" />
+			</div>
+			<div id="user-tools">
+				<a href="{{ route('songs_path', [$song->slug]) }}"><img id="back" src="{{URL::asset('img/Clean-Icons-Designed-by-Matt-Gentile-icondeposit-com/PNG Files/32x32/13.png')}}" title="Back"></a>
+				<input id="save" type="image" name="submit" src="{{URL::asset('img/Clean-Icons-Designed-by-Matt-Gentile-icondeposit-com/PNG Files/32x32/29.png')}}" alt="Submit" title="Save">
+				<!-- APPEND SCREEN MODE -->
+			</div>
+			
+		</div>
+		<div id="lyrics_show">
+			<div class="tabs">
+				<div class="navs theme blue-outline dark">
+					<div class="tab">
+						<nav role="tab1" class="active"></nav>
+						<span>HTML Code</span>
+					</div>
+					<div class="tab">
+						<nav role="tab2"></nav>
+						<span>View Mode</span>
+					</div>
+					<div class="tab">
+						<nav role="tab3"></nav>
+						<span>Embed Code</span>
+					</div>
+				</div>
+				<div class="panels theme blue-outline dark">
+					<content role="tab1">
+						<!-- UPDATE: add this to default.js -->
+						<textarea class="mousescroll" name="edit_lyrics" id="edit_lyrics" placeholder="Lyrics" onkeyup="check_update('#edit_lyrics',this.value); save_enabled();" onblur="check_update('#edit_lyrics',this.value); save_enabled();"><?php echo htmlspecialchars($song->lyrics); ?></textarea>
+					</content>
+					<content role="tab2" style="display:none;">
+						<pre class="mousescroll" id="edit_html_lyrics"></pre>
+					</content>
+					<content role="tab3" style="display:none;">
+						<!-- <div id="info">
+							<span>Change Color to Blue : <i>7D98B9 ;</i></span>
+							<span>Autoplay : <i>auto_play=true ;</i></span>
+							<span>Hide related : <i>hide_related=true ;</i></span>
+						</div> -->
+						<textarea class="mousescroll" spellcheck="false" onkeypress="save_enabled();" name="mp3_link" id="edit_mp3_link" placeholder="Embed Code"><?php echo htmlspecialchars($song->mp3); ?></textarea>
+						<div id="embed_view" class="mousescroll"></div>
+					</content>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="id" value="{{$song->id}}" />
+		<input type="hidden" name="slug" value="{{$song->slug}}" />
+		<input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+	</form>
+</div>

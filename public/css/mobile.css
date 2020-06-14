@@ -1,0 +1,243 @@
+@media screen and (max-width: 1px){
+/*----------Hide Desktop Version---------*/
+	#header #header-content #inner-content #right{
+		display: none;
+	}
+	#body #right_content #inner_content{
+		display: none;
+	}
+/*----------Show Mobile Version----------*/
+	#header #header-content #inner-content #right-mobile{
+		display: table-cell;
+		width: 20%;
+		height: 100%;
+		background-color: #FFF;
+		text-align: right;
+		padding: 0 20px;
+		vertical-align: middle;
+	}
+	#header #header-content #inner-content #right-mobile #menu{
+		vertical-align: middle;
+		width: 20px;
+		height: auto;
+		margin-left: 5px;
+		cursor: pointer;
+	}
+/*-------------------------------------------------------------------------------------------------*/
+	#body #right_content #inner_content-mobile{
+		display: block;
+	}
+	#body #right_content #inner_content-mobile #space{
+		text-align: center;
+		color: #CCC;
+		letter-spacing: 3px;
+		padding: 10px 0;
+		border-bottom: solid thin #CCC;
+	}
+	#body #right_content #inner_content-mobile #links{
+		font-size: 14px;
+		font-family: Arial;
+		padding: 5px 10px;
+		text-transform: capitalize;
+		text-indent: 10px;
+		-webkit-transition: .08s;
+		-moz-transition: .08s;
+		-o-transition: .08s;
+		transition: .08s;
+		border-bottom: solid thin #EAEAEA;
+		color: #777;
+	}
+	#body #right_content #inner_content-mobile #links:hover{
+		background-color: #7D98B9;
+		color: #fff;
+		cursor: pointer;
+	}
+	#body #right_content #inner_content-mobile #links.selected{
+		background-color: #CCC;
+		color: #fff;
+	}
+	#body #right_content #inner_content-mobile a{
+		text-decoration: none;
+	}
+	#body #right_content #inner_content-mobile a #links{
+
+	}
+	#body #right_content #inner_content-mobile a #links:hover{
+		background-color: #7D98B9;
+		color: #fff;
+		cursor: pointer;
+	}
+	#body #right_content #inner_content-mobile a #links.selected{
+		background-color: #CCC;
+		color: #fff;
+	}
+	#body #right_content #inner_content-mobile a #links img{
+		vertical-align: middle;
+		width: 30px;
+		height: auto;
+		padding: 0 20px;
+		cursor: pointer;
+		opacity: .7;
+	}
+	#body #right_content #inner_content-mobile a #links:hover img{
+		opacity: 1;
+		-webkit-filter: invert(100%);
+		-moz-filter: invert(100%);
+    	filter: invert(100%);
+	}
+	#body #right_content #inner_content-mobile.not-visible{
+		position: fixed;
+		right: -25%;
+		font-family: 'Yanone Kaffeesatz', sans-serif;
+		text-align: left;
+		width: 25%;
+		height: 100%-50px;
+		text-transform: uppercase;
+		background-color: #FFF;
+		z-index: 999;
+		-webkit-transition: .08s;
+		-moz-transition: .08s;
+		-o-transition: .08s;
+		transition: .08s;
+		bottom: 0;
+		top: 50px;
+		box-shadow: 1px 1px 5px #888888;
+	}
+	#body #right_content #inner_content-mobile.visible{
+		position: fixed;
+		right: 0;
+		text-align: left;
+		width: 25%;
+		font-family: 'Yanone Kaffeesatz', sans-serif;
+		height: 100%-50px;
+		text-transform: uppercase;
+		background-color: #FFF;
+		z-index: 999;
+		-webkit-transition: .08s;
+		-moz-transition: .08s;
+		-o-transition: .08s;
+		transition: .08s;
+		bottom: 0;
+		top: 50px;
+		box-shadow: 1px 1px 5px #888888;
+	}
+/*-------------------------------------------------------------------------------------------------*/
+	#header #header-content #inner-content #middle-mobile span,
+	#header #header-content #inner-content #left,
+	#header #header-content #inner-content #middle{
+		display: none;
+	}
+	#header #header-content #inner-content #middle-mobile{
+		padding: 0 1%;
+		display: table-cell;
+		width: 33.33%;
+		height: 100%;
+		background-color: #333;
+		vertical-align: top;
+	}
+	#header #header-content #inner-content #middle-mobile a{
+
+	}
+	#header #header-content #inner-content #middle-mobile a img{
+		width: 50px;
+		height: auto;
+		vertical-align: top;
+	}
+	#header #header-content #inner-content #middle-mobile span{
+		font-family: 'Yanone Kaffeesatz', sans-serif;
+		color: #DDD;
+		font-size: 33px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	#header #header-content #inner-content #left-mobile{
+		display: table-cell;
+		width: 33.33%;
+		height: 100%;
+		text-align: left;
+		background-color: #FFF;
+		padding: 0 10px;
+		border-left: solid #CCC;
+		vertical-align: middle;
+	}
+	#header #header-content #inner-content #left-mobile form{
+		vertical-align: middle;
+	}
+	#header #header-content #inner-content #left-mobile form img{
+		display: inline-block;
+		width: 25px;
+		height: auto;
+		padding: 0;
+		margin: 0;
+		vertical-align: middle;
+	}
+	#header #header-content #inner-content #left-mobile form #search_ajax{
+		display: inline-block;
+		position: relative;
+		font-family: Arial;
+		font-size: 16px;
+		width: 190px;
+		border-radius: 10px;
+		padding: 5px 0;
+		border: solid thin #CCC;
+		margin-top: 5px;
+		background-color: #F2F2F2;
+		text-indent: 5px;
+		-webkit-transition: .08s;
+		-moz-transition: .08s;
+		-o-transition: .08s;
+		transition: .08s;
+		vertical-align: middle;
+	}
+	#header #header-content #inner-content #left-mobile form #search_ajax:focus{
+		border: solid thin #7D98B9;
+	}
+	#header #header-content #inner-content #left-mobile form #txtHint{
+		color: #7D98B9;
+		font-family: Arial;
+		border-bottom: solid thick #CCC; 
+		position: absolute;
+		box-shadow: 1px 1px 5px #888888;
+	}
+	#header #header-content #inner-content #left-mobile form #txtHint a{
+		width: 190px;
+	}
+	#header #header-content #inner-content #left-mobile form #txtHint a li,
+	#header #header-content #inner-content #left-mobile form #txtHint a li:active{
+		width: 280px;
+		background-color: #FFF;
+		padding: 10px 0 10px 10px;
+		border-left: solid thick transparent;
+		border-right: solid thick transparent;
+		border-top: solid thin #F2F2F2;
+		color: #777;
+	}
+	#header #header-content #inner-content #left-mobile form #txtHint a.matched li:hover {
+		background-color: #F2F2F2;
+	}
+	#header #header-content #inner-content #left-mobile form #txtHint a li span{
+		font-size: small;
+		color: #AAA;
+		margin-left: 4px;
+	}
+	#header #header-content #inner-content #right{
+		width: 33.33%;
+	}
+	#body #left_content{
+		font-size: 16px;
+		position: fixed;
+		width: 22.5%;
+		text-indent: 20px;
+		background-color: #333333;
+		height: 97.5%;
+		padding: 1.25% 1.25%;
+		color: #EAEAEA;
+	}
+	#body #content{
+		width: 75%;
+		margin-left: 25%;
+	}
+	#body #right_content{
+		font-size: 16px;
+	}
+}

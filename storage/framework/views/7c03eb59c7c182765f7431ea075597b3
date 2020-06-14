@@ -1,0 +1,20 @@
+<?php if(Auth::user()): ?>
+	<?php $__env->startSection('modal'); ?>
+		<div id="add-song-modal" class="hide">
+			<div id="bg-modal"></div>
+			<div id="form">
+				<?php $type = 'modal'; ?>
+				<?php echo $__env->make('layouts.modals._add_song', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			</div>
+		</div>
+	<?php $__env->stopSection(); ?>
+
+	<?php $__env->startSection('pager'); ?>
+		<!-- <div id="previous"><div id="left"></div></div>
+		<div id="next"><div id="right"></div></div> -->
+	<?php $__env->stopSection(); ?>
+
+	<?php $__env->startSection('add_song_link'); ?>
+		<div id="button" class="add-new">create new</div>
+	<?php $__env->stopSection(); ?>
+<?php endif; ?>

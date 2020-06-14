@@ -1,0 +1,14 @@
+<form method="POST" action="<?php echo e(route('song_delete', [$song->slug])); ?>">
+	<div id="lyrics_title">
+		<pre><?php echo e($song->title); ?><?php if($song->version > 1): ?><span id="v"> v. <?php echo e($song->version); ?></span><?php endif; ?> <?php if($song->artist <> ""): ?><span id="by">by <?php echo e($song->artist); ?></span><?php endif; ?></pre>
+		<a href="<?php echo e(route('song_edit', [$song->slug, 'edit'])); ?>"><img id="edit" src="<?php echo e(URL::asset('img/Clean-Icons-Designed-by-Matt-Gentile-icondeposit-com/PNG Files/16x16/69.png')); ?>" title="Edit"></a>
+		<input id="delete" type="image" src="<?php echo e(URL::asset('img/Pixel UI Icon Set - PNG Icons/Trash.png')); ?>" alt="Submit" title="Delete">
+		<!-- APPEND SCREEN MODE -->
+	</div>
+	<div id="lyrics_show" class="default">
+		<pre class="mousescroll"><?php echo htmlspecialchars($song->lyrics); ?></pre>
+	</div>
+	<input type="hidden" name="id" value="<?php echo e($song->id); ?>" />
+	<input type="hidden" name="slug" value="<?php echo e($song->slug); ?>" />
+	<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+</form>

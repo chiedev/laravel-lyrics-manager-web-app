@@ -1,0 +1,387 @@
+/**
+	Theme Name: Google Chrome-Like Tabs
+	Theme URI: http://CilleDimla.com/playground/google-chrome-like-tabs
+	Author: Cille Dimla
+	Author URI: http://CilleDimla.com/
+	Description: Custom Tab-Panel Stylesheet
+	Version: 1.0
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	AVAILABLE THEMES:
+	** 	Note: to enable the following themes, a 'theme' class must be added along the theme title. 
+		Applicable with both navs and panels classes. 
+		(e.g. 
+			<div class="navs theme space-blue">...</div>
+			<div class="panels theme space-blue">...</div>
+		).
+
+		light 				=>	default white theme.
+
+		dark 				=> 	black background, white font for navs.
+							=> 	this theme can combine with any outline themes,
+								this will let the backgound of navs or panels to become dark.
+								(e.g. <div class="navs theme orange-outline dark">...</div>).
+
+		available colors 	=> [orange,blue,yellow,green]
+**/
+
+.tabs{
+	position: initial;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.tabs .navs{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 30px;
+	z-index: 2;
+	font-size: 0;
+}
+.tabs .navs .tab{
+	position: relative;
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px 3px 0 0;
+	margin: 0;
+	min-width: 150px;
+}
+.tabs .navs .tab > nav{
+	position: inherit;
+	width: calc(100% - 2px);
+	height: calc(30px - 3px);
+	background: #333;
+	color: #333;
+	font-size: 0;
+	margin: 2px 0 0 0;
+	text-align: center;
+	height: 27px;
+	border: solid thin #444;
+	border-radius: 5px 5px 0 0;
+	-webkit-transform: perspective(90px) rotateX(30deg);
+	-moz-transform: perspective(90px) rotateX(30deg);
+	z-index: 3;
+}
+.tabs .navs .tab > span{
+	position: absolute;
+	font-size: 14px;
+	color: white;
+	margin: auto;
+	top: 0; bottom: 0; left: 0; right: 0;
+	text-align: center;
+	height: 27px;
+	z-index: 4;
+}
+.tabs .navs .tab > nav.active{
+	z-index: 4;
+}
+/*----THEMES-----------------------------------------------------------------------------------------*/
+/*---default,light---*/
+.tabs .navs .tab > nav,
+.tabs .navs.theme.light .tab > nav{
+	background-color: #EFEFEF;
+	border: solid thin #CCC;
+}
+.tabs .navs .tab > span,
+.tabs .navs.theme.light .tab > span{
+	color: #333;
+	line-height: 33px;
+}
+.tabs .navs .tab:hover > nav,
+.tabs .navs.theme.light .tab:hover > nav{
+	background-color: #DADADA;
+}
+.tabs .navs .tab:hover > span,
+.tabs .navs.theme.light .tab:hover > span{
+	text-shadow: none;
+	color: #111;
+}
+.tabs .navs .tab:active > nav,
+.tabs .navs .tab > nav.active,
+.tabs .navs.theme.light .tab:active > nav,
+.tabs .navs.theme.light .tab > nav.active{
+	background: #FFF;
+	border-bottom: solid thin #FFF;
+}
+.tabs .navs .tab:active > span,
+.tabs .navs .tab > nav.active + span,
+.tabs .navs.theme.light .tab:active > span,
+.tabs .navs.theme.light .tab > nav.active + span{
+	text-shadow: none;
+	color: #111;
+
+}
+/*---dark---*/
+.tabs .navs.theme.dark .tab > nav{
+	background-color: #333;
+	border: solid thin #444;
+}
+.tabs .navs.theme.dark .tab > span{
+	color: #FFF;
+}
+.tabs .navs.theme.dark .tab:hover > nav{
+	background-color: #222;
+}
+.tabs .navs.theme.dark .tab:active > nav{
+	border-bottom: solid thin #444;
+	background-color: #222;
+}
+.tabs .navs.theme.dark .tab > nav.active{
+	border-bottom: solid thin #222;
+	background-color: #222;
+}
+/*---outline theme combine with dark theme---*/
+.tabs .navs.theme.orange-outline.dark .tab > nav,
+.tabs .navs.theme.blue-outline.dark .tab > nav,
+.tabs .navs.theme.yellow-outline.dark .tab > nav,
+.tabs .navs.theme.green-outline.dark .tab > nav{
+	background-color: #333 !important;
+}
+.tabs .navs.theme.orange-outline.dark .tab > span,
+.tabs .navs.theme.blue-outline.dark .tab > span,
+.tabs .navs.theme.yellow-outline.dark .tab > span,
+.tabs .navs.theme.green-outline.dark .tab > span,
+	color: #FFF !important;
+}
+.tabs .navs.theme.orange-outline.dark .tab:hover > nav,
+.tabs .navs.theme.blue-outline.dark .tab:hover > nav,
+.tabs .navs.theme.yellow-outline.dark .tab:hover > nav,
+.tabs .navs.theme.green-outline.dark .tab:hover > nav{
+	background-color: #222 !important;
+}
+.tabs .navs.theme.orange-outline.dark .tab > nav.active,
+.tabs .navs.theme.orange-outline.dark .tab:active > nav,
+.tabs .navs.theme.blue-outline.dark .tab > nav.active,
+.tabs .navs.theme.blue-outline.dark .tab:active > nav,
+.tabs .navs.theme.yellow-outline.dark .tab > nav.active,
+.tabs .navs.theme.yellow-outline.dark .tab:active > nav,
+.tabs .navs.theme.green-outline.dark .tab > nav.active,
+.tabs .navs.theme.green-outline.dark .tab:active > nav{
+	border-bottom: solid thin #222 !important;
+	background-color: #222 !important;
+}
+/*---orange---*/
+.tabs .navs.theme.orange .tab > nav{
+	border-color: #BC451A;
+	background-color: #FAFAFA;
+}
+.tabs .navs.theme.orange .tab > span{
+	color: #111;
+}
+.tabs .navs.theme.orange .tab:hover > nav{
+	background-color: #DFDFDF;
+}
+.tabs .navs.theme.orange .tab > nav.active,
+.tabs .navs.theme.orange .tab:active > nav{
+	background-color: #F77A4C;
+	border-bottom: solid thin #F77A4C;
+}
+.tabs .navs.theme.orange .tab > nav.active + span,
+.tabs .navs.theme.orange .tab:active > span{
+	color: #FFF;
+	text-shadow:
+	1px 1px 0 #000,
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+/*---orange-outline---*/
+.tabs .navs.theme.orange-outline .tab > nav{
+	border-color: #BC451A;
+	background-color: #EFEFEF;
+}
+.tabs .navs.theme.orange-outline .tab:hover > nav{
+	background-color: #DADADA;
+}
+.tabs .navs.theme.orange-outline .tab > nav.active,
+.tabs .navs.theme.orange-outline .tab:active > nav{
+	background: #FAFAFA;
+	border-bottom: solid thin #FFF;
+}
+/*---blue---*/
+.tabs .navs.theme.blue .tab > nav{
+	border-color: #405A7A;
+	background-color: #FAFAFA;
+}
+.tabs .navs.theme.blue .tab > span{
+	color: #111;
+}
+.tabs .navs.theme.blue .tab:hover > nav{
+	background-color: #DFDFDF;
+}
+.tabs .navs.theme.blue .tab > nav.active,
+.tabs .navs.theme.blue .tab:active > nav{
+	background-color: #7D98B9;
+	border-bottom: solid thin #7D98B9;
+}
+.tabs .navs.theme.blue .tab > nav.active + span,
+.tabs .navs.theme.blue .tab:active > span{
+	color: #FFF;
+	text-shadow:
+	1px 1px 0 #000,
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+/*---blue-outline---*/
+.tabs .navs.theme.blue-outline .tab > nav{
+	border-color: #405A7A;
+	background-color: #EFEFEF;
+}
+.tabs .navs.theme.blue-outline .tab:hover > nav{
+	background-color: #DADADA;
+}
+.tabs .navs.theme.blue-outline .tab > nav.active,
+.tabs .navs.theme.blue-outline .tab:active > nav{
+	background: #FAFAFA;
+	border-bottom: solid thin #FFF;
+}
+/*---yellow---*/
+.tabs .navs.theme.yellow .tab > nav{
+	border-color: #BFBF15;
+	background-color: #FAFAFA;
+}
+.tabs .navs.theme.yellow .tab > span{
+	color: #111;
+}
+.tabs .navs.theme.yellow .tab:hover > nav{
+	background-color: #DFDFDF;
+}
+.tabs .navs.theme.yellow .tab > nav.active,
+.tabs .navs.theme.yellow .tab:active > nav{
+	background-color: #EEF05F;
+	border-bottom: solid thin #EEF05F;
+}
+.tabs .navs.theme.yellow .tab > nav.active + span,
+.tabs .navs.theme.yellow .tab:active > span{
+	color: #FFF;
+	text-shadow:
+	1px 1px 0 #000,
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+/*---yellow-outline---*/
+.tabs .navs.theme.yellow-outline .tab > nav{
+	border-color: #BFBF15;
+	background-color: #EFEFEF;
+}
+.tabs .navs.theme.yellow-outline .tab:hover > nav{
+	background-color: #DADADA;
+}
+.tabs .navs.theme.yellow-outline .tab > nav.active,
+.tabs .navs.theme.yellow-outline .tab:active > nav{
+	background: #FAFAFA;
+	border-bottom: solid thin #FFF;
+}
+/*---green---*/
+.tabs .navs.theme.green .tab > nav{
+	border-color: #2C5E2C;
+	background-color: #FAFAFA;
+}
+.tabs .navs.theme.green .tab > span{
+	color: #111;
+}
+.tabs .navs.theme.green .tab:hover > nav{
+	background-color: #DFDFDF;
+}
+.tabs .navs.theme.green .tab > nav.active,
+.tabs .navs.theme.green .tab:active > nav{
+	background-color: #489E48;
+	border-bottom: solid thin #489E48;
+}
+.tabs .navs.theme.green .tab > nav.active + span,
+.tabs .navs.theme.green .tab:active > span{
+	color: #FFF;
+	text-shadow:
+	1px 1px 0 #000,
+	-1px -1px 0 #000,  
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
+}
+/*---green-outline---*/
+.tabs .navs.theme.green-outline .tab > nav{
+	border-color: #2C5E2C;
+	background-color: #EFEFEF;
+}
+.tabs .navs.theme.green-outline .tab:hover > nav{
+	background-color: #DADADA;
+}
+.tabs .navs.theme.green-outline .tab > nav.active,
+.tabs .navs.theme.green-outline .tab:active > nav{
+	background: #FAFAFA;
+	border-bottom: solid thin #FFF;
+}
+/*--------------------------------------------------------------------------------------------------*/
+.tabs .panels{
+	position: relative;
+	width: calc(100% - 2px);
+	height: calc(100% - 31px);
+	margin-top: -1px;
+	border: none;
+}
+.tabs .panels > content{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	border: solid thin #444;
+	font-size: 14px;
+}
+/*---THEMES------------------------------------------------------------------------------------------*/
+/*---default,light---*/
+.tabs .panels > content,
+.tabs .panels.theme.light > content{
+	background-color: #FFF;
+	border: solid thin #CCC;
+}
+/*---dark---*/
+.tabs .panels.theme.dark > content,
+.tabs .panels.theme.dark > content{
+	border: solid thin #444;
+	background-color: #222;
+	color: #FFF;
+}
+/*---orange---*/
+.tabs .panels.theme.orange > content{
+	border-color: #BC451A;
+	background-color: #F77A4C;
+}
+/*---orange-outline---*/
+.tabs .panels.theme.orange-outline > content{
+	border-color: #BC451A;
+}
+/*---blue---*/
+.tabs .panels.theme.blue > content{
+	border: solid thin #405A7A;
+	background-color: #7D98B9;
+}
+/*---blue-outline---*/
+.tabs .panels.theme.blue-outline > content{
+	border: solid thin #405A7A;
+}
+/*---yellow---*/
+.tabs .panels.theme.yellow > content{
+	border: solid thin #BFBF15;
+	background-color: #EEF05F;
+}
+/*---yellow-outline---*/
+.tabs .panels.theme.yellow-outline > content{
+	border: solid thin #BFBF15;
+}
+/*---green---*/
+.tabs .panels.theme.green > content{
+	border: solid thin #2C5E2C;
+	background-color: #489E48;
+}
+/*---green-outline---*/
+.tabs .panels.theme.green-outline > content{
+	border: solid thin #2C5E2C;
+}

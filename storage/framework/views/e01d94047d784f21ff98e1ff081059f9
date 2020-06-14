@@ -1,0 +1,16 @@
+<?php $__env->startSection('head'); ?>
+	<?php echo HTML::style('css/default.css'); ?>
+
+	<?php echo $__env->make('layouts.ajax._ajax', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('body'); ?>
+	<div id="body" >
+		<div class="error">
+			<div class="content">
+				404 Page Not Found
+			</div>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('masterlayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

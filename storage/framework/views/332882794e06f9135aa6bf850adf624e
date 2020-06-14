@@ -1,0 +1,42 @@
+<div id="bg"></div>
+<div id="space">
+    <div id="title">all songs</div>
+    <div id="nav">
+        <div id="drop-down" class="cursor"></div>
+        <div id="drop-down-content" class="hide">
+            <span>sort</span>
+            <div id ="name_asc">name (ASC)</div>
+            <div id ="name_desc" class="selected">name (DESC)</div>
+            <div id="recent">recent</div>
+        </div>
+    </div>
+</div>
+<div id="inner_content" class="mousescroll">
+    <div id="sorted-name-asc">
+        <?php foreach($sorted_songs_asc as $mysong): ?>
+            <?php if($mysong->slug == $song->slug): ?>
+                <a><div id="links" class="selected"><?php echo e($mysong->title); ?><span><?php if($mysong->version>1): ?> v.<?php echo e($mysong->version); ?><?php endif; ?></span></div></a>
+            <?php else: ?>
+                <a href="<?php echo e(route('songs_path', [$mysong->slug])); ?>"><div id="links"><?php echo e($mysong->title); ?><span><?php if($mysong->version>1): ?> v.<?php echo e($mysong->version); ?><?php endif; ?></span></div></a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+    <div id="sorted-name-desc">
+        <?php foreach($sorted_songs_desc as $mysong): ?>
+            <?php if($mysong->slug == $song->slug): ?>
+                <a><div id="links" class="selected"><?php echo e($mysong->title); ?><span><?php if($mysong->version>1): ?> v.<?php echo e($mysong->version); ?><?php endif; ?></span></div></a>
+            <?php else: ?>
+                <a href="<?php echo e(route('songs_path', [$mysong->slug])); ?>"><div id="links"><?php echo e($mysong->title); ?><span><?php if($mysong->version>1): ?> v.<?php echo e($mysong->version); ?><?php endif; ?></span></div></a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+    <div id="sorted_recent">
+        <?php foreach($sorted_songs_recent as $mysong): ?>
+            <?php if($mysong->slug == $song->slug): ?>
+                <a><div id="links" class="selected"><?php echo e($mysong->title); ?><span><?php if($mysong->version>1): ?> v.<?php echo e($mysong->version); ?><?php endif; ?></span></div></a>
+            <?php else: ?>
+                <a href="<?php echo e(route('songs_path', [$mysong->slug])); ?>"><div id="links"><?php echo e($mysong->title); ?><span><?php if($mysong->version>1): ?> v.<?php echo e($mysong->version); ?><?php endif; ?></span></div></a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>   
+</div>

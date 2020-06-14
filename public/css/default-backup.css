@@ -1,0 +1,787 @@
+body{
+	/* light blue */
+	/*---color: #7D98B9;*/
+	/* blue */
+	/*---color: #577293;*/
+	/* red */
+	/*---color: #EA7777;*/
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: Arial;
+	font-size: 16px;
+	border: 0;
+	color: #F2F2F2;
+	cursor: default;
+}
+#background{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-image: url('../img/bg_lowpoly_dark.jpg');
+}
+input,textarea,div,li{
+	list-style: none;
+	text-indent: 0;
+	outline: none;
+}
+input[type=text],
+input[type=password]{
+	font-family: Arial;
+	text-indent: 7px;
+	font-size: 14px;
+	line-height: 30px;
+	color: #555;
+	width: 250px;
+	border: none;
+	background-color: #FFF;
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 4px;
+	-webkit-transition: .09s;
+	-moz-transition: .09s;
+	-o-transition: .09s;
+	transition: .09s;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+	box-shadow: 0 0 1px 1px #7D98B9;
+}
+#button{
+	padding: 5px 20px;
+	background-color: #577293;
+	color: #EAEAEA;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 16px;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	-webkit-transition: .08s;
+	-moz-transition: .08s;
+	-o-transition: .08s;
+	transition: .08s;
+	text-transform: uppercase;
+	text-align: center;
+}
+#button:hover{
+	background-color: #7D98B9;
+}
+#button:disabled,
+#scroller button:disabled{
+	background-color: #444;
+	color: #555;
+	cursor: default;
+}
+a,a:active{
+	text-decoration: none;
+	color: #CCC;
+}
+a:hover{
+	color: #F2F2F2;
+	text-decoration: underline;
+}
+h1{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	line-height: 35px;
+	color: #7D98B9;
+}
+::-webkit-selection{
+	background: #CCC;
+}
+::-moz-selection{
+	background: #CCC;
+}
+::-o-selection{
+	background: #CCC;
+}
+::selection{
+	background: #CCC;
+}
+/*---------------------------------------------------*/
+#header{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	z-index: 99999;
+	border-bottom: solid #7D98B9;
+}
+#header #header-bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	background-repeat: repeat-x;
+	background-size: 500px;
+}
+#header #header-bg-white{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*background-color: #FFF;*/
+	z-index: -1;
+	/*background:linear-gradient(#F2F2F2, #555);*/
+    /*background:-o-linear-gradient(#555, #FFF);
+    background:-ms-linear-gradient(#555, #FFF);
+    background:-moz-linear-gradient(#555, #FFF);
+    background:-webkit-linear-gradient(#555, #FFF);*/
+}
+#header #header-content{
+	position: absolute;
+	top: 0;
+	z-index: 99999;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/dotted.png");
+	background-size: auto;
+}
+#header #header-content #inner-content{
+	display: table;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+#header #header-content #inner-content #left{
+	padding: 0 1%;
+	display: table-cell;
+	width: 20%;
+	height: 100%;
+	vertical-align: top;
+}
+#header #header-content #inner-content #left a{
+
+}
+#header #header-content #inner-content #left a img{
+	width: 50px;
+	height: auto;
+	vertical-align: top;
+}
+#header #header-content #inner-content #middle{
+	display: table-cell;
+	width: 60%;
+	height: 100%;
+	text-align: left;
+	padding: 0 10px;
+	vertical-align: middle;
+}
+#header #header-content #inner-content #middle form{
+	vertical-align: middle;
+}
+#header #header-content #inner-content #middle form img{
+	display: inline-block;
+	width: 25px;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+#header #header-content #inner-content #middle form #search_ajax{
+	display: inline-block;
+	position: relative;
+	font-family: Arial;
+	font-size: 16px;
+	width: 300px;
+	border: solid thin #333;
+	margin-top: 5px;
+	background-color: #F2F2F2;
+	text-indent: 5px;
+	-webkit-transition: .08s;
+	-moz-transition: .08s;
+	-o-transition: .08s;
+	transition: .08s;
+	vertical-align: middle;
+}
+#header #header-content #inner-content #middle form #txtHint{
+	color: #7D98B9;
+	font-family: Arial;
+	margin-left: 30px;
+	border-bottom: solid thick #CCC; 
+	position: absolute;
+	box-shadow: 1px 1px 5px #888888;
+}
+#header #header-content #inner-content #middle form #txtHint a{
+	width: 300px;
+}
+#header #header-content #inner-content #middle form #txtHint a li,
+#header #header-content #inner-content #middle form #txtHint a li:active{
+	width: 280px;
+	background-color: #FFF;
+	padding: 10px 0 10px 10px;
+	border-left: solid thick transparent;
+	border-right: solid thick transparent;
+	border-top: solid thin #F2F2F2;
+	color: #777;
+}
+#header #header-content #inner-content #middle form #txtHint a.matched li:hover {
+	background-color: #F2F2F2;
+}
+#header #header-content #inner-content #middle form #txtHint a li span{
+	font-size: small;
+	color: #AAA;
+	margin-left: 4px;
+}
+#header #header-content #inner-content #right{
+	display: table-cell;
+	width: 20%;
+	height: 100%;
+	text-align: right;
+	padding: 0 20px;
+	vertical-align: middle;
+}
+#header #header-content #inner-content #right #privacy,
+#header #header-content #inner-content #right #stitches,
+#header #header-content #inner-content #right #user{
+	vertical-align: middle;
+	width: 30px;
+	height: auto;
+	margin-left: 5px;
+	cursor: pointer;
+}
+#header #header-content #inner-content #right #settings,
+#header #header-content #inner-content #right #menu{
+	vertical-align: middle;
+	width: 20px;
+	height: auto;
+	margin-left: 5px;
+	cursor: pointer;
+}
+#header #header-content #inner-content #middle img,
+#header #header-content #inner-content #right img{
+	opacity: .5;
+}
+#header #header-content #inner-content #right img:hover{
+	opacity: 1;
+}
+/*---------------------------------------------------*/
+#body{
+	padding-top: 50px;
+	width: 100%;
+	height: 100%;
+}
+#body #left_content{
+	position: fixed;
+	text-align: left;
+	vertical-align: top;
+	width: 20%;
+	height: 100%;
+}
+#body #left_content #bg{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #333;
+}
+#body #left_content #inner-content{
+	font-size: 18px;
+	position: fixed;
+	width: 17.5%;
+	text-indent: 20px;
+	height: 97.5%;
+	color: #EAEAEA;
+	padding: 1.25% 1.25%;
+}
+#body #left_content #inner-content #home{
+	position: relative;
+	width: 100%;
+}
+#body #left_content #inner-content #home #tools{
+
+}
+#body #left_content #inner-content #home #divider,
+#body #left_content #inner-content #transpose #divider{
+	padding: 20px 0;
+	border-top: solid thin #444;
+	font-size: 16px;
+}
+#body #left_content #inner-content #home #divider li,
+#body #left_content #inner-content #transpose #divider li{
+	display: block;
+}
+#body #left_content #inner-content #home #divider li #recent,
+#body #left_content #inner-content #transpose #divider li #similar{
+	display: inline-block;
+	line-height: 20px;
+	font-size: 15px;
+}
+#body #left_content #inner-content #home #divider li span,
+#body #left_content #inner-content #transpose #divider li span{
+	display: inline-block;
+	font-size: small;
+	color: #999;
+}
+#body #left_content #inner-content #home #divider li #artist,
+#body #left_content #inner-content #transpose #divider li #artist{
+	display: block;
+	margin-bottom: 5px;
+	font-size: small;
+	color: #999;
+}
+#body #left_content #inner-content #transpose{
+	position: relative;
+	width: 100%;
+}
+#body #left_content #inner-content #transpose #divider #inner_content{
+	display: table;
+	text-align: center;
+	width: 100%;
+	color: #555;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+#body #left_content #inner-content #transpose #divider #inner_content #buttons{
+	display: table-cell;
+	font-size: 30px;
+	padding: 0 2px;
+	margin: 0;
+	background-color: #F2F2F2;
+	border-radius: 0 3px 3px 0;
+}
+#body #left_content #inner-content #transpose #divider #inner_content #buttons .button,
+#scroller button{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 24px;
+	height: auto;
+	color: #F2F2F2;
+	background-color: #999;
+	border-radius: 2px;
+	border: none;
+	width: 100%;
+	margin: 2px 0;
+	padding: 0;
+	display: block;
+}
+#body #left_content #inner-content #transpose #divider #inner_content #buttons .button:hover,
+#scroller button:hover{
+	background-color: #777;
+	cursor: pointer;
+}
+#body #left_content #inner-content #transpose #divider #inner_content #buttons .button:active,
+#scroller button:active{
+	background-color: #666;
+}
+#body #left_content #inner-content #transpose #divider #inner_content #buttons .button.reset{
+	font-size: 14px;
+	font-weight: normal;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+#body #left_content #inner-content #transpose #divider #inner_content #label.default{
+	display: table-cell;
+	background-color: #F2F2F2;
+	width: 60%;
+	vertical-align: middle;
+	border-radius: 3px 0 0 3px;
+}
+#body #left_content #inner-content #transpose #divider #inner_content #label.large{
+	display: table-cell;
+	background-color: #F2F2F2;
+	width: 60%;
+	vertical-align: middle;
+	border-radius: 3px 0 0 3px;
+	font-size: 40px;
+}
+
+
+/*---------------------------------------------------*/
+#body #content #post{
+	padding: 1% 5%;
+	position: relative;
+	width: 90%;
+	border-bottom: solid thin #333;
+}
+#body #content #post #avatar{
+	width: 40px;
+	height: auto;
+}
+#body #content #post img{
+	position: relative;
+	display: block;
+	width: 100%;
+}
+/*---------------------------------------------------*/
+#body #content{
+	position: relative;
+	text-align: left;
+	width: 60%;
+	border-left: solid #333;
+	vertical-align: top;
+	margin-left: 20%;
+}
+#body #content #bg_content{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .7;
+}
+#body #content #inner-content{
+	position: relative;
+	padding: 10px 0 10em 0;
+}
+#body #content #inner-content #lyrics_title{
+	position: relative;
+	width: 100%;
+	border-bottom: solid thin #333;
+}
+#body #content #inner-content #lyrics_title pre{
+	position: relative;
+	font-family: Arial;
+	padding: 10px 5% 0 5%;
+	font-size: 20px;
+	width: 90%;
+	margin: 0;
+	margin-bottom: 1px;
+}
+#body #content #inner-content #lyrics_title pre #v{
+	display: absolute;
+	right: 0;
+	color: #555;
+	font-size: 12px;
+}
+#body #content #inner-content #lyrics_title pre #by{
+	display: block;
+	color: #777;
+	font-size: 14px;
+	margin: 0;
+	padding: 0 0 10px 0;
+}
+#body #content #inner-content #lyrics_title a #edit{
+	position: absolute;
+	margin-top: 40px;
+	right: 70px;
+	width: 20px;
+	height: auto;
+	opacity:.7;
+}
+#body #content #inner-content #lyrics_title #delete{
+	position: absolute;
+	margin-top: 40px;
+	right: 40px;
+	width: 20px;
+	height: auto;
+	opacity:.7;
+}
+#body #content #inner-content #lyrics_title a #edit:hover,
+#body #content #inner-content #lyrics_title a #delete:hover{
+	opacity:.5;
+}
+#body #content #inner-content #lyrics_show{
+
+}
+#body #content #inner-content #lyrics_show pre {
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 18px;
+	border: none;
+	border-radius: 5px;
+	resize:none;
+	padding: 15px 2.5%;
+	margin: 10px 2.5%;
+	background-color: #F2F2F2;
+	min-height: 400px;
+	width: 90%;
+	color: #555;
+}
+#body #content #inner-content #update-song{
+	display: table;
+	margin: 0;
+	width: 100%;
+}
+#body #content #inner-content #update-song #lyrics_title_update div{
+	margin: 0;
+	margin-bottom: 1px;
+	padding: 0 2.5%;
+	text-align: right;
+}
+#body #content #inner-content #update-song #lyrics_title_update div #labels{
+	display: table-cell;
+	padding-right: 20px;
+	vertical-align: middle;
+}
+#body #content #inner-content #update-song #lyrics_title_update div #input{
+	display: table-cell;
+	text-align: left;
+	vertical-align: middle;
+	position: relative;
+}
+#body #content #inner-content #update-song #lyrics_title_update div #input span{
+
+}
+#body #content #inner-content #update-song #lyrics_title_update div #input span #required{
+	position: absolute;
+	right: -25px;
+	top: 12px;
+	font-size: 30px;
+	color: #DD4B39;
+}
+#body #content #inner-content #update-song #lyrics_title_update div #input span #text{
+	position: absolute;
+	right: -60px;
+	top: 52px;
+	font-size: 11px;
+}
+#body #content #inner-content #update-song #lyrics_title_update #note{
+	position: absolute;
+	left: 0;
+	padding-right: 2.5%;
+	opacity: .8;
+}
+#body #content #inner-content #update-song #lyrics_title_update #note #required{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 30px;
+	color: #DD4B39;
+	text-align: right;
+}
+#body #content #inner-content #update-song #lyrics_title_update #note #text{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 11px;
+	line-height: 20px;
+	padding-left: 5px;
+	text-align: left;
+}
+#body #content #inner-content #update-song #lyrics_title_update #note #text:first-letter{
+	text-transform: uppercase;
+}
+#body #content #inner-content #update-song #lyrics_title_update{
+	position: relative;
+	border-bottom: solid thin #333;
+	width: 100%;
+}
+#body #content #inner-content #update-song #nav{
+	position: absolute;
+	display: block;
+	margin-top: 20px;
+	right: 20px;
+	z-index: 999;
+}
+#body #content #inner-content #update-song #nav a img{
+	position: absolute;
+	right: 0;
+	display: block;
+	width: 20px;
+	height: auto;
+}
+#body #content #inner-content #update-song #nav a img:hover{
+	opacity:.7;
+}
+#body #content #inner-content #update-song #nav input{
+	margin-top: 25px;
+}
+#body #content #inner-content #update-song #lyrics_show_update{
+	position: relative;
+}
+#body #content #inner-content #update-song #lyrics_show_update #info{
+	padding: 0 2.5%;
+	width: 75%;
+}
+#body #content #inner-content #update-song #lyrics_show_update #info span{
+	display: block;
+	margin: 0 5px;
+	font-size: small;
+}
+#body #content #inner-content #update-song #lyrics_show_update textarea {
+	display: block;
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 18px;
+	border: none;
+	border-top: solid transparent;
+	resize:none;
+	padding: 15px 2.5%;
+	margin: 25px 2.5%;
+    width: 75%;
+    background-color: #FFF;
+    color: #444;
+	-webkit-transition: .09s;
+	-moz-transition: .09s;
+	-o-transition: .09s;
+	transition: .09s;
+}
+#body #content #inner-content #update-song #lyrics_show_update #edit_mp3_link{
+	background-color: #333;
+	color: #AAA;
+}
+#body #content #inner-content #update-song #lyrics_show_update textarea:focus {
+	box-shadow: 1px 1px 3px -1px #888888;
+	color: #000;
+}
+
+
+/*---------------------------------------------------*/
+#body #right_content.not-visible{
+	position: fixed;
+	right: -20%;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-align: left;
+	width: 20%;
+	height: 100%-50px;
+	text-transform: uppercase;
+	z-index: 999;
+	-webkit-transition: .08s;
+	-moz-transition: .08s;
+	-o-transition: .08s;
+	transition: .08s;
+	bottom: 0;
+	top: 50px;
+	box-shadow: 1px 1px 5px #888888;
+}
+#body #right_content.visible{
+	position: fixed;
+	right: 0;
+	text-align: left;
+	width: 20%;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	height: 100%-50px;
+	text-transform: uppercase;
+	z-index: 999;
+	-webkit-transition: .08s;
+	-moz-transition: .08s;
+	-o-transition: .08s;
+	transition: .08s;
+	bottom: 0;
+	top: 50px;
+	box-shadow: 1px 1px 5px #888888;
+}
+#body #right_content #bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: .2;
+	background-image: url('../img/bg_cross-hatch.jpg');
+}
+#body #right_content #inner_content{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#body #right_content #inner_content #button{
+	margin: 0 25%;
+	text-align: center;
+}
+#body #right_content #inner_content a{
+	text-decoration: none;
+}
+#body #right_content #inner_content a #links{
+	font-size: 14px;
+	font-family: Arial;
+	line-height: 30px;
+	padding-right: 20px;
+	padding-left: 10px;
+	margin-left: 0;
+	text-transform: capitalize;
+	text-indent: 10px;
+	-webkit-transition: .08s;
+	-moz-transition: .08s;
+	-o-transition: .08s;
+	transition: .08s;
+	border-bottom: solid thin #555;
+	margin: 0 10px;
+	color: #F2F2F2;
+}
+#body #right_content #inner_content a #links:hover{
+	background-color: #7D98B9;
+	color: #fff;
+	cursor: pointer;
+}
+#body #right_content #inner_content a #links.selected{
+	background-color: #CCC;
+	color: #555;
+}
+#body #right_content #inner_content #space{
+	text-align: center;
+	color: #CCC;
+	letter-spacing: 5px;
+	padding: 50px 0 25px;
+}
+
+
+
+/*---------------------------------------------------*/
+/*#footer{
+	background-color: #333;
+	color: #999;
+	font-size: small;
+	padding: 20px;
+}*/
+#footer{
+	position: absolute;
+	bottom: 0;
+	width: 80%;
+	padding: 1% 10% 1% 10%;
+	background-color: #000;
+}
+#footer #copyright{
+	text-align:center;
+	color: #AAA;
+	font-size: x-small;
+}
+
+
+
+
+
+
+/*----------------------EXTRAS-----------------------*/
+.chord{
+	color: #577293;
+	font-weight: bold;
+}
+#body #right_content #inner_content.mousescroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+#body #right_content #inner_content.mousescroll:hover{
+    overflow-y: scroll;
+}
+#body #right_content #inner_content.mousescroll::-webkit-scrollbar{
+    width: 5px;
+}
+#body #right_content #inner_content.mousescroll::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 10px;
+}
+#body #right_content #inner_content.mousescroll::-webkit-scrollbar-thumb{
+	background-color: #EAEAEA;
+    border-radius: 10px;
+    border: solid thick transparent;
+}
+#body #right_content #inner_content.mousescroll:hover::-webkit-scrollbar-thumb{
+	background-color: #BBB;
+	cursor: pointer;
+}
+#body #right_content #inner_content .mousescroll::-webkit-scrollbar-thumb:active{
+	background-color: #999;
+}
+
+/*-------------------------------*/
+#scroller{
+	position: fixed;
+	right: 25px;
+	top: 75px;
+	width: 75px;
+}
+#scroller button{
+	font-size: 12px;
+	font-weight: normal;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding:  5px 0;
+}
+
+
+/*----------mobile--------------*/
+#header #header-content #inner-content #left-mobile,
+#header #header-content #inner-content #middle-mobile,
+#header #header-content #inner-content #right-mobile,
+#body #right_content #inner_content-mobile{
+	display: none;
+}

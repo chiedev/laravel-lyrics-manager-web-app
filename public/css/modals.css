@@ -1,0 +1,506 @@
+#add-song-modal,
+#add-song-modal.hide,
+#add-song-modal.show,
+#media-modal,
+#media-modal.hide,
+#media-modal.show{
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+	position: fixed;
+	top: 0;
+	font-size: 14px;
+	height: 100%;
+	width: 100%;
+}
+#add-song-modal.show,
+#media-modal.show{
+	z-index: 999999;
+	opacity: 1;
+}
+#add-song-modal.hide,
+#media-modal.hide{
+	z-index: -1;
+	opacity: 0;
+}
+#add-song-modal #bg-modal,
+#media-modal #bg-modal{
+	position: absolute;
+	z-index:-1;
+	width: 100%;
+	height: 100%;
+	opacity: .5;
+	background-color: #000;
+
+}
+#add-song-modal #form,
+#add-song-modal.hide #form,
+#add-song-modal.show #form,
+#media-modal #form,
+#media-modal.hide #form,
+#media-modal.show #form{
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+	margin: auto;
+	position: relative;
+	top: 0; left: 0; bottom: 0; right: 0;
+	opacity: 1;
+	/*padding: 10px 2.5% 0 2.5%;
+	width: 45%;
+	height: 90%;*/
+	padding: 20px;
+	max-width: calc(700px - 40px);
+	max-height: calc(500px - 40px);
+	border-radius: 5px;
+	text-align: left;
+	background-color: #F2F2F2;
+}
+#add-song-modal.hide #form,
+#media-modal.hide #form{
+	top: -200%;
+}
+#add-song-modal #form #text{
+	width: 100%;
+	margin-top: 10px;
+}
+#add-song-modal #form #text input{
+	display: block;
+	font-family: Arial;
+	font-size: 14px;
+	border-radius: 5px;
+	border: solid thin #CCC;
+	background-color: #fff;
+	margin-bottom: 5px; 
+	width: 40%;
+}
+#add-song-modal #form #text input:focus{
+	border: solid thin #7D98B9;
+}
+#add-song-modal #form #form_lyrics{
+	position: relative;
+	display: block;
+	font-family: Arial;
+	line-height: 20px;
+	/*padding: 2.5% 2.5%;
+	width: 95%;
+	height: 300px;*/
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	resize: none;
+	border-radius: 3px;
+	border: solid thin #CCC;
+	background-color: #fff;
+}
+#add-song-modal #form #info{
+	position: relative;
+	display: block;
+	padding: 10px 0;
+	width: 100%;
+}
+#add-song-modal #form #info span{
+	display: block;
+	margin: 0 5px;
+	font-size: small;
+}
+#add-song-modal #form #form_mp3{
+	position: relative;
+	display: block;
+	font-family: Arial;
+	line-height: 20px;
+	padding: 2.5% 2.5%;
+	width: 95%;
+	height: 50px;
+	resize: none;
+	border-radius: 3px;
+	border: solid thin #CCC;
+	background-color: #333;
+	color: #AAA;
+}
+#add-song-modal #form textarea:focus{
+	border: solid thin #7D98B9;
+}
+#add-song-modal #form #button{
+	display: block;
+	position: absolute;
+	display: block;
+	right: 5%;
+	margin-top: 15px; 
+	z-index: 99;
+}
+
+/*--------------------------------------------------------
+#media-modal #form,
+#media-modal.hide #form,
+#media-modal.show #form{
+	width: 85%;
+	padding: 0;
+	border-radius: 0;
+	overflow-y: inherit;
+}
+#media-modal #form #left{
+	float: left;
+	width: 30%;
+}
+#media-modal #form #left #content{
+	position: relative;
+	width: 92%;
+	height: 12%;
+	padding: 4%;
+	background-color: transparent;
+}
+#media-modal #form #left #content #profile-pic{
+
+}
+#media-modal #form #left #content #profile-pic img{
+	width: 50px;
+	height: 50px;
+}
+#media-modal #form #left #content #profile-pic name{
+	position: relative;
+}
+#media-modal #form #left #content #profile-pic name a{
+	position: absolute;
+	top: -20px;
+	color: #577293;
+	font-size: 14px;
+	font-weight: bold;
+}
+#media-modal #form #left #user-tools{
+	width: 92%;
+	height: 1%;
+	padding: 2% 4%;
+	border-bottom: solid thin #DDD;
+}
+#media-modal #form #left #user-tools li{
+	display: inline-block;
+	padding-right: 4px;
+	font-size: 12px;
+	color: #444;
+}
+#media-modal #form #left #comments{
+	width: 92%;
+	height: 73%;
+	padding: 4%;
+}
+
+/*--------------------------------------------------------*/
+#media-modal #form #right{
+	float: right;
+	width: 70%;
+	height: 100%;
+	background-color: #111;
+}
+#media-modal #form #right #content{
+	position: relative;
+	width: 100%;
+	height: 90%;
+	background-color: transparent;
+}
+#media-modal #form #right #content img,
+#media-modal #form #right #content video{
+	position: absolute;
+	margin: auto;
+	top: 0; bottom: 0; left: 0; right: 0;
+}
+#media-modal #form #right #content img{
+	max-width: 100%;
+	max-height: 100%;
+}
+#media-modal #form #right #content video{
+	width: 100%;
+}
+#media-modal #form #right #navs{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border: 0;
+	width: 68%;
+	background-color: #000;
+	padding: 1%;
+}
+#media-modal #form #right #navs #info{
+	float: left;
+}
+#media-modal #form #right #navs #info li{
+	display: inline-block;
+	padding: 0 2px;
+	color: #DDD;
+	font-size: 12px;
+}
+#media-modal #form #right #navs #tools{
+	float: right;
+}
+#media-modal #form #right #navs #tools li{
+	display: inline-block;
+	padding: 0 2px;
+	color: #CCC;
+	font-size: 11px;
+}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#add-song-modal #login_form,
+#register_form{
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	display: table;
+	background-color: #FFF;
+	width: 300px;
+	text-align: center;
+	border-radius: 5px;
+	padding: 7px;
+	box-shadow: 1px 1px 10px -4px #888888;
+}
+#register_form{
+	width: 500px;
+	padding: 20px;
+}
+#login_form #inner-content{
+	width: 95%;
+	padding: 0 2.25%;
+	display: table;
+	border-radius: 5px;
+	background-color: #F2F2F2;
+}
+#register_form #inner-content{
+	width: 90%;
+	padding: 5% ;
+	display: table;
+	border-radius: 3px;
+	text-align: right;
+	background-color: #F2F2F2;
+}
+h1{
+	text-transform: capitalize;
+	color: #577293;
+	text-align: center;
+	line-height: 20px;
+}
+hr{
+    border: 0;
+    border-color: #fff;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/*#register_form #inner-content #labels{
+	display: table-cell;
+	width: 15%;
+	text-align: center;
+	padding-right: 0 10px;
+	border-right: solid #CCC;
+}
+#register_form #inner-content #labels label{
+	display: block;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	line-height: 44px;
+	font-size: 14px;
+	margin-right: 12px;
+	color: #AAA;
+}*/
+#register_form #inner-content #inputs{
+	display: table-cell;
+	width: 70%;
+	text-align: left;
+}
+#login_form #inner-content img{
+	width: 100px;
+	height: auto;
+}
+/*#register_form #inner-content #inputs label*/
+label{
+	text-align: left;
+	font-size: small;
+	color: #777;
+	margin: 0
+}
+#login_form #inner-content input[type=text],
+#login_form #inner-content input[type=password],
+#register_form #inner-content #inputs input[type=text],
+#register_form #inner-content #inputs input[type=password],
+#register_form #inner-content #inputs input[type=email]{
+	display: block;
+	margin-bottom: 10px;
+	font-size: 16px;
+	background-color: #FFF;
+	width: 100%;
+	box-shadow: 0 0 1px 1px #CCC;
+}
+#login_form #inner-content input[type=text]:focus,
+#login_form #inner-content input[type=password]:focus,
+#register_form #inner-content #inputs input[type=text]:focus,
+#register_form #inner-content #inputs input[type=password]:focus,
+#register_form #inner-content #inputs input[type=email]:focus{
+	border: solid thin #7D98B9;
+}
+#login_form #inner-content a, #login_form #inner-content a:active{
+	float: left;
+	font-size: 14px;
+	color: #CCC;
+}
+#login_form #inner-content a:hover{
+	color: #888;
+	text-decoration: none;
+}
+#login_form #inner-content input[type=submit]{
+	float: right;
+	margin: 10px 0;
+}
+#register_form #inner-content #label{
+	position: relative;
+	display: table-cell;
+	text-align: left;
+	width: 30%;
+}
+#register_form #inner-content #label hr{
+	width: 100%;
+}
+#register_form #inner-content #label span{
+	display: inline-block;
+	font-size: 12px;
+	right: 0;
+	color: white;
+	padding: 1px 10px 1px 10px;
+	border-radius: 3px;
+	vertical-align: middle;
+	line-height: 20px;
+	margin-top: 20px;
+}
+#register_form #inner-content #label span span{
+	background-color: #FFF;
+	color: #CCC;
+}
+#register_form #inner-content #label span span.red{
+	background-color: #C94E4E;
+	color: #FFF;
+}
+#register_form #inner-content #label span span.green{
+	background-color: #83C46D;
+	color: #FFF;
+}
+#register_form #inner-content #label span #tip{
+	display: inline-block;
+	border: solid 5px transparent;
+	vertical-align: bottom;
+	border-right: solid 5px #FFF;
+	margin-bottom: 5px;
+}
+#register_form #inner-content #label span #tip.red{
+	border-right: solid 5px #C94E4E;
+}
+#register_form #inner-content #label span #tip.green{
+	border-right: solid 5px #83C46D;
+}
+#register_form #inner-content #label input[type=submit]{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+#register_form #inner-content #inputs #lbl_pass{
+	margin: 0 15px;
+}
+#register_form #inner-content #inputs #lbl_pass li{
+	display: inline-block;
+	width: 35px;
+	font-size: 9px;
+	line-height: 20px;
+	color: 	#AAA;
+	border-bottom: solid 5px #CCC;
+}
+#register_form #inner-content #inputs #lbl_pass.weak #w{
+	border-bottom: solid 5px #C94E4E;
+}
+#register_form #inner-content #inputs #lbl_pass.normal #w,
+#register_form #inner-content #inputs #lbl_pass.normal #n{
+	border-bottom: solid 5px #EAB354;
+}
+#register_form #inner-content #inputs #lbl_pass.good #w,
+#register_form #inner-content #inputs #lbl_pass.good #n,
+#register_form #inner-content #inputs #lbl_pass.good #g{
+	border-bottom: solid 5px #83C46D;
+}
+#register_form #inner-content #inputs #lbl_pass.strong #w,
+#register_form #inner-content #inputs #lbl_pass.strong #n,
+#register_form #inner-content #inputs #lbl_pass.strong #g,
+#register_form #inner-content #inputs #lbl_pass.strong #s{
+	border-bottom: solid 5px #577293;
+}
+#register_form #inner-content #inputs #lbl_pass span{
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: bottom;
+	padding: 0 30px;
+	font-weight: bold;
+}
+#register_form #inner-content #inputs #lbl_pass span.red{
+	color: #C94E4E;
+}
+#register_form #inner-content #inputs #lbl_pass span.green{
+	color: #83C46D;
+}
+
+
+/*PAGER--------------------------------------------------------------------------------------------------------*/
+.screen-paging.previous{
+	position: fixed;
+	top: 60px; bottom: 0;
+	border: solid 30px #111;
+	opacity: .2;
+	z-index: 99999999;
+}
+.screen-paging.previous .left{
+	position: fixed;
+	padding: 7px;
+	border-radius: 2px;
+	top: 50%;
+	left: 22px;
+	transform: rotate(135deg);
+	border-left: solid thick transparent;
+	border-right: solid thick #F2F2F2;
+	border-top: solid thick transparent;
+	border-bottom: solid thick #F2F2F2;
+}
+.screen-paging.next{
+	position: fixed;
+	top: 60px; bottom: 0; right: 0;
+	border: solid 30px #111;
+	opacity: .2;
+	z-index: 99999999;
+}
+.screen-paging.next .right{
+	position: fixed;
+	padding: 7px;
+	border-radius: 2px;
+	top: 50%;
+	right: 22px;
+	transform: rotate(315deg);
+	border-left: solid thick transparent;
+	border-right: solid thick #F2F2F2;
+	border-top: solid thick transparent;
+	border-bottom: solid thick #F2F2F2;
+}
+.screen-paging.previous:hover,
+.screen-paging.next:hover{
+	opacity: .9;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

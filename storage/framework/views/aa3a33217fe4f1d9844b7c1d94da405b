@@ -1,0 +1,9 @@
+<div id="home">
+	<?php echo $__env->yieldContent('recent'); ?>
+	<?php echo $__env->yieldContent('soundcloud'); ?>
+</div>
+<div id="tools">
+	<?php echo $__env->yieldContent('tools'); ?>
+	<?php echo $__env->yieldContent('similar'); ?>
+</div>
+<?php echo $__env->yieldContent('add_song_link'); ?>

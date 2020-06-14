@@ -1,0 +1,38 @@
+/**
+	Name: Simple Pop-Up
+	URI: http://CilleDimla.com/playground/simple-pop-up
+	Author: Cille Dimla
+	Author URI: http://CilleDimla.com/
+	Description: Simple Pop-Up StyleSheet
+	Version: 1.0
+	License: GNU General Public License v2 or later
+**/
+.pop-up{
+	display: none;
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999999;
+}
+.pop-up .pop-up-bg{
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .5;
+}
+.pop-up > content{
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+	background-color: white;
+	max-height: calc(500px - 5%);
+	max-width: calc(750px - 5%);
+}
+.pop-up .loading{
+	position: absolute;
+	top: 0; bottom: 0; left: 0; right: 0;
+	margin: auto;
+}

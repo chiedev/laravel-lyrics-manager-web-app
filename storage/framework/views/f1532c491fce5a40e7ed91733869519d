@@ -1,0 +1,29 @@
+<form method="POST" action="update-song">
+	<?php if($error == 'edit-error'): ?>
+		<label id="error"><?php echo e($msg); ?></label>
+	<?php endif; ?>
+	<div id="lyrics_title">
+		<div id="input">
+			<input onkeypress="save_enabled();" type="text" name="edit_title" id="edit_title" value="<?php echo e($song->title); ?>" placeholder="Title" onkeyup="check_update('#edit_title',this.value); save_enabled();" onblur="check_update('#edit_title',this.value); save_enabled();">
+			<input onkeypress="save_enabled();" type="text" name="edit_artist" value="<?php echo e($song->artist); ?>" placeholder="Artist">
+		</div>
+			<a href="<?php echo e(route('songs_path', [$song->slug])); ?>"><img id="back" src="<?php echo e(URL::asset('img/Clean-Icons-Designed-by-Matt-Gentile-icondeposit-com/PNG Files/32x32/13.png')); ?>" title="Back"></a>
+			<input id="save" type="image" name="submit" src="<?php echo e(URL::asset('img/Clean-Icons-Designed-by-Matt-Gentile-icondeposit-com/PNG Files/32x32/29.png')); ?>" alt="Submit" title="Save">
+			<!-- <?php foreach($layouts as $layout): ?> <?php if($layout->screen_mode == 'full-screen'): ?> <?php endif; ?> <?php endforeach; ?> -->
+			<img id="normal-screen" src="<?php echo e(URL::asset('img/Pixel UI Icon Set - PNG Icons/Screen Mode 2.png')); ?>" title="Normal Mode" hidden="hidden"/>
+			<img id="full-screen" src="<?php echo e(URL::asset('img/Pixel UI Icon Set - PNG Icons/Screen Mode 1.png')); ?>" title="Full Screen Mode" hidden="hidden" />
+
+	</div>
+	<div id="lyrics_show">
+		<textarea name="edit_lyrics" id="edit_lyrics" placeholder="Lyrics" onkeyup="check_update('#edit_lyrics',this.value); save_enabled();" onblur="check_update('#edit_lyrics',this.value); save_enabled();"><?php echo htmlspecialchars($song->lyrics); ?></textarea>
+		<div id="info">
+			<span>Change Color to Blue : <i>7D98B9 ;</i></span>
+			<span>Autoplay : <i>auto_play=true ;</i></span>
+			<span>Hide related : <i>hide_related=true ;</i></span>
+		</div>
+		<textarea spellcheck="false" onkeypress="save_enabled();" name="mp3_link" id="edit_mp3_link" placeholder="SoundCloud link"><?php echo htmlspecialchars($song->mp3); ?></textarea>
+	</div>
+	<input type="hidden" name="id" value="<?php echo e($song->id); ?>" />
+	<input type="hidden" name="slug" value="<?php echo e($song->slug); ?>" />
+	<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+</form>

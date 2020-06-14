@@ -1,0 +1,110 @@
+<?php $__env->startSection('head'); ?>
+	<?php echo HTML::style('css/user-profile.css'); ?>
+
+	<link rel="stylesheet" type="text/css" href="<?php echo e(URL::asset('css/posts.css')); ?>">
+	<!--<script type="text/javascript" src="<?php echo e(URL::asset('js/photos.js')); ?>"></script>-->
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('header'); ?>
+	<div id="background">
+		<div id="gradient"></div>
+	</div>
+	<div id="header">
+		<div id="header-bg-white"></div>
+		<div id="header-bg"></div>
+		<div id="header-content">
+			<div id="inner-content">
+				<div id="left">
+					<div id="nav">
+						<div class="tooltip-subject">
+							<a href="/" class="tooltip" label="home"><img src="<?php echo e(URL::asset('img/knot_small.png')); ?>"></a>
+						</div>
+					</div>
+				</div>
+				<div id="middle">
+				</div>
+				<div id="right">
+					<?php if(Auth::user()): ?>
+						<?php if(Auth::user()->firstname || Auth::user()->lastname): ?>
+							<a href="<?php echo e(route( 'user_profile', [Auth::user()->username])); ?>" id="user_link"><?php echo ucfirst(Auth::user()->firstname.' '.Auth::user()->lastname); ?></a>
+						<?php else: ?>
+							<a href="<?php echo e(route( 'user_profile', [Auth::user()->username])); ?>" id="user_link"><?php echo ucfirst(Auth::user()->username); ?></a>
+						<?php endif; ?>
+					<img id="user" class="user_link" src="<?php echo e(URL::asset('img/user.png')); ?>">
+					<img id="menu" src="<?php echo e(URL::asset('img/menu.png')); ?>">
+					<?php else: ?>
+						<button class="login_link">Login</button>
+						<div id="user-login">
+							<div id="tooltip" class="hide">
+								<div id="tip"></div>
+								<div id="content">
+									<?php echo FORM::open(['url' => 'auth/login']); ?>
+
+									<?php echo FORM::text('user', null, ['placeholder' => 'Email | Username', 'autofocus']); ?>
+
+									<?php echo FORM::password('password', ['placeholder' => 'Password']); ?>
+
+									<?php echo FORM::submit('Login', ['id'=>'button']); ?>
+
+									<?php echo HTML::link('register', 'Register'); ?><br>
+									<?php echo HTML::link('retrieve', 'Forgot Password?'); ?>
+
+									<?php echo FORM::close(); ?>
+
+								</div>
+							</div>
+						</div>
+					<?php endif; ?>
+				</div>
+				<?php if(Auth::user()): ?>
+				<div id="user">
+					<div id="tooltip" class="hide">
+						<div id="tip"></div>
+						<div id="content">
+							<span>User</span>
+							<a href="/profile">
+								<div id="link">Profile</div>
+							</a>
+							<a href="/settings">
+								<div id="link">Settings</div>
+							</a>
+							<a href="/logout">
+								<div id="link">Logout</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('body'); ?>
+	<div id="body">
+		<?php echo $__env->yieldContent('media-modal'); ?>
+		<div id="content">
+			<div id="bg_content"></div>
+			<div id="inner-content">
+				<?php echo $__env->yieldContent('content'); ?>
+			</div>
+		</div>
+
+		<?php echo $__env->yieldContent('other-sources'); ?>
+		
+		<?php foreach($layouts as $layout): ?>
+			<?php if($layout->right_content == 'not-visible'): ?>
+				<div id="right_content" class="not-visible">
+					<div id="bg"></div>
+
+				</div>
+			<?php elseif($layout->right_content == 'visible'): ?>
+				<div id="right_content" class="visible">
+					<div id="bg"></div>
+
+				</div>
+			<?php endif; ?>
+		<?php endforeach; ?>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('masterlayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

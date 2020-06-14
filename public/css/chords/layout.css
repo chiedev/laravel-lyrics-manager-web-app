@@ -1,0 +1,162 @@
+#chord-list{
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+.chord-generator{
+	width: 100%;
+}
+.chord-generator{
+	font-size: 12px;
+}
+.chord-container{
+	position: relative;
+	display: inline-block;
+	width: calc(150px - 50px);
+	height: auto;
+	padding: 5px 20px 7.5px;
+	margin: 5px 5px 7.5px;
+	background: white;
+	font-family: arial;
+	font-size: 11px;
+	color: #222;
+	font-weight: bold;
+	background: #F9F9F9;
+}
+a .chord-container:hover{
+	background: #FFF;
+    cursor: pointer;
+}
+a .chord-container:active{
+	background: #DDD;
+    cursor: pointer;
+}
+a .chord-container > .dl_bg{
+	position: absolute;
+	color: #FFF;
+	background: #000;	
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	-webkit-transition: .2s;
+    transition: .2s;
+}
+a .chord-container > .dl_bg > span{
+	position: absolute;
+	top: 10px; bottom: 10px; left: 10px; right: 10px;
+	margin: auto;
+	height: 12px;
+	font-size: 12px;
+}
+a:hover .chord-container > .dl_bg{
+	opacity: .8;
+	-webkit-transition: .2s;
+    transition: .2s;
+}
+.chord-container .chord-name{
+	position: relative;
+	display: table;
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+.chord-container .open-string{
+	position: relative;
+	display: table;
+	padding-bottom: 2px;
+	text-align: left;
+}
+/*GUITAR----------------------------------------------------------------*/
+	.chord-container.guitar .open-string{
+		width: 120%;
+	}
+/*UKULELE---------------------------------------------------------------*/
+	.chord-container.ukulele .open-string{
+		width: 133%;
+	}
+/*----------------------------------------------------------------------*/
+.chord-container .open-string span{
+	position: relative;
+	display: table-cell;
+	border: none;
+	height: 0px;
+	left: -2.5%;
+	font-size: 8.5px;
+	font-weight: normal;
+}
+/*GUITAR----------------------------------------------------------------*/
+	.chord-container.guitar .open-string span{
+		position: relative;
+		display: table-cell;
+		border: none;
+		height: 0px;
+		left: -2.5%;
+	}
+/*UKULELE---------------------------------------------------------------*/
+	.chord-container.ukulele .open-string span{
+		position: relative;
+		display: table-cell;
+		border: none;
+		height: 0px;
+		left: -2.5%;
+	}
+/*----------------------------------------------------------------------*/
+.chord-container .chord{
+	position: relative;
+	width: 100%;
+	border-top: double 5px #222;
+	border-collapse: collapse;
+}
+.chord-container .chord .fret{
+	border-bottom: solid 1.5px #222;
+	height: 20px;
+}
+.chord-container .chord .fret:first-child{
+	height: 22.5px;
+}
+.chord-container .chord .fret td{
+	border-left: solid 1.5px #222;
+}
+.chord-container .chord .fret td:last-child{
+	border-right: solid 1.5px #222;
+}
+.chord-container .chord .fret td .point{
+	position: absolute;
+	background: #222;
+	padding: 5px;
+	border-radius: 999px;
+	margin: -5% 0 0 -5.6%;
+}
+.chord-container .chord .fret td .last_point{
+	position: absolute;
+	background: #222;
+	padding: 5px;
+	border-radius: 999px;
+}
+/*GUITAR----------------------------------------------------------------*/
+	.chord-container.guitar .chord .fret td .last_point{
+		margin: -5% 0 0 14.7%;
+	}
+/*UKULELE---------------------------------------------------------------*/
+	.chord-container.ukulele .chord .fret td .last_point{
+		margin: -5% 0 0 27.7%;
+	}
+
+
+/*TOOLTIP---------------------------------------------------------------*/
+span.chord-tooltip{
+	cursor: pointer;
+	width: auto;
+	height: auto;
+}
+container.chord-tooltip{
+	position: absolute;
+	z-index: 999999;
+	background-color: white;
+	display: none;	
+}

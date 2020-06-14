@@ -1,0 +1,39 @@
+<div id="working-tools">
+	<div id="section">
+		<div id="container">
+			<span id="title">SQL Statements</span>
+			<hr>
+			<div id="inner-content">
+				<select class="dark-theme">
+					<option>Create Database</option>
+					<option>Create Table</option>
+					<option>Drop Database</option>
+					<option>Drop Table</option>
+					<option selected>Select Table</option>
+					<option>Truncate Table</option>
+				</select>
+			</div>
+			<div id="innner-content">
+				<select class="dark-theme">
+					<?php foreach($tables as $table): ?>
+					<option><?php echo e($tables); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+			<div id="inner-content">
+				<input class="dark-theme" type="text">
+			</div>
+		</div>
+		<div id="container">
+			<span id="title">Playlists</span>
+			<hr>
+			<div id="inner-content">
+				<select class="dark-theme">
+					<?php foreach($songs as $song): ?>
+					<option><?php echo e($song->title); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>

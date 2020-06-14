@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stitch</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo e(URL::asset('js/initial.js')); ?>"></script>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<?php echo HTML::style('http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz'); ?>
+
+	<?php echo HTML::style('css/default.css'); ?>
+
+	<?php echo HTML::style('css/initial.css'); ?>
+
+	<?php echo $__env->make('layouts.ajax._ajax', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</head>
+<body>
+	<div id="initial_background">
+		<div id="main"></div>
+		<img id="cloud1" src="<?php echo e(URL::asset('img/lowpoly-cloud.png')); ?>">
+		<img id="cloud2" src="<?php echo e(URL::asset('img/lowpoly-cloud.png')); ?>">
+		<img id="cloud3" src="<?php echo e(URL::asset('img/lowpoly-cloud.png')); ?>">
+		<div id="birds">
+			<img id="bird1" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+			<img id="bird2" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+			<img id="bird3" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+			<img id="bird4" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+			<img id="bird5" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+			<img id="bird6" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+			<img id="bird7" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+		</div>
+		<img id="bird" src="<?php echo e(URL::asset('img/flying-bird.gif')); ?>">
+		<img id="cloud4" src="<?php echo e(URL::asset('img/lowpoly-cloud.png')); ?>">
+		<img id="cloud5" src="<?php echo e(URL::asset('img/lowpoly-cloud.png')); ?>">
+		<img id="cloud6" src="<?php echo e(URL::asset('img/lowpoly-cloud.png')); ?>">
+		<div id="gradient">
+			<div></div>
+		</div>
+	</div>
+	<div id="body">
+		<?php echo $__env->yieldContent('content'); ?>
+	</div>
+</body>
+</html>
