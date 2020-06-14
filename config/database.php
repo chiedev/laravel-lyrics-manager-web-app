@@ -1,8 +1,8 @@
 <?php
 $db["host"] = "localhost";
-$db["database"] = "elixinsh_lyrics";
-$db["username"] = "elixinsh_admin";
-$db["password"] = 'private00';
+$db["database"] = "db_name";
+$db["username"] = "root";
+$db["password"] = '';
 return [
 
 	/*
